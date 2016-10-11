@@ -13,18 +13,18 @@
     <link href="css/1-col-portfolio.css" rel="stylesheet">
     <link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
     
-    <script type="text/javascript">
-    (function(p,u,s,h){
-        p._pcq=p._pcq||[];
-        p._pcq.push(['_currentTime',Date.now()]);
-        s=u.createElement('script');
-        s.type='text/javascript';
-        s.async=true;
-        s.src='https://cdn.pushcrew.com/js/43ece0b9a3575eede113d75b36c765d7.js';
-        h=u.getElementsByTagName('script')[0];
-        h.parentNode.insertBefore(s,h);
-    })(window,document);
-</script>
+    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async='async'></script>
+    <script>
+    var OneSignal = window.OneSignal || [];
+    OneSignal.push(["init", {
+      appId: "d1d024e5-303e-4cb8-b167-0721a5d767bb",
+      autoRegister: true, /* Set to true to automatically prompt visitors */
+      subdomainName: 'girishrawat.onesignal.com',   
+      notifyButton: {
+          enable: true /* Set to false to hide */
+      }
+    }]);
+    </script>
 </head>
 
 <body>
