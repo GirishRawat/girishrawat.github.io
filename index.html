@@ -15,6 +15,10 @@
     
     <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async='async'></script>
     <script>
+    var host = "girishrawat.github.io";
+    if ((host == window.location.host) && (window.location.protocol != "https:"))
+    window.location.protocol = "https";
+
     var OneSignal = window.OneSignal || [];
     OneSignal.push(["init", {
       appId: "d1d024e5-303e-4cb8-b167-0721a5d767bb",
