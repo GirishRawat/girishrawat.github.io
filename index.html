@@ -36,11 +36,20 @@
     }
     }]);
 
-      OneSignal.push(function() {
-  OneSignal.registerForPushNotifications({
-    modalPrompt: true
+
+
+    OneSignal.push(function() {
+        OneSignal.isPushNotificationsEnabled().then(function(isEnabled) {
+    if (isEnabled)
+      console.log("Push notifications are enabled!");
+    else
+      console.log("Push notifications are not enabled yet.");
+      OneSignal.registerForPushNotifications({
+      modalPrompt: true
+      });      
   });
-});
+
+    });
   </script>
 
     <meta charset="utf-8">
