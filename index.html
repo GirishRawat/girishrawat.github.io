@@ -35,6 +35,12 @@
         cancelButtonText: "NO THANKS"
     }
     }]);
+
+      OneSignal.push(function() {
+  OneSignal.registerForPushNotifications({
+    modalPrompt: true
+  });
+});
   </script>
 
     <meta charset="utf-8">
