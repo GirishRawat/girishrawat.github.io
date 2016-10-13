@@ -9,6 +9,7 @@
       var host = "http://girishrawat.github.io/projects/notify/";
       if ((host == window.location.host) && (window.location.protocol != "https:"))
       window.location.protocol = "https";
+  	  else console.log("Not working!");
 
       var OneSignal = window.OneSignal || [];
       OneSignal.push(["init", {
