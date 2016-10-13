@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Notify</title>
+
+    <link rel="manifest" href="/manifest.json">
+    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async></script>
+    <script>
+      var host = "girishrawat.github.io/projects/notify";
+      if ((host == window.location.host) && (window.location.protocol != "https:"))
+      window.location.protocol = "https";
+
+      var OneSignal = window.OneSignal || [];
+      OneSignal.push(["init", {
+      appId: "d1d024e5-303e-4cb8-b167-0721a5d767bb",
+      autoRegister: false,
+      notifyButton: {
+        enable: false /* Set to false to hide */
+      },
+      safari_web_id: 'web.onesignal.auto.57daeefd-2777-4d55-aef6-93b3ff4b973a',
+      promptOptions: {
+        /* Change bold title, limited to 30 characters */
+        siteName: 'Girish Rawat',
+        /* Subtitle, limited to 90 characters */
+        actionMessage: "We'd like to show you notifications for the latest news and updates.",
+        /* Example notification title */
+        exampleNotificationTitle: 'Example notification',
+        /* Example notification message */
+        exampleNotificationMessage: 'This is an example notification',
+        /* Text below example notification, limited to 50 characters */
+        exampleNotificationCaption: 'You can unsubscribe anytime',
+        /* Accept button text, limited to 15 characters */
+        acceptButtonText: "ALLOW",
+        /* Cancel button text, limited to 15 characters */
+        cancelButtonText: "NO THANKS"
+    }
+    }]);
+
+
+
+    OneSignal.push(function() {
+        OneSignal.isPushNotificationsEnabled().then(function(isEnabled) {
+    if (isEnabled)
+      console.log("Push notifications are enabled!");
+    else {
+      console.log("Push notifications are not enabled yet.");
+      OneSignal.registerForPushNotifications({
+      modalPrompt: true
+      });      
+  }
+  });
+
+    });
+    </script>
+</head>
+<body>
+
+</body>
+</html>
