@@ -4,13 +4,14 @@
 	<title>Notify</title>
 
     <link rel="manifest" href="/manifest.json">
-    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async></script>
-    <script>
-      var host = "http://girishrawat.github.io/projects/notify/";
+    <script type="text/javascript">
+    	      var host = "http://girishrawat.github.io/projects/notify/";
       if ((host == window.location.host) && (window.location.protocol != "https:"))
       window.location.protocol = "https";
   	  else console.log("Not working!");
-
+    </script>
+    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async></script>
+    <script>
       var OneSignal = window.OneSignal || [];
       OneSignal.push(["init", {
       appId: "d1d024e5-303e-4cb8-b167-0721a5d767bb",
