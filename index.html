@@ -2,9 +2,8 @@
 <html lang="en">
 
 <head>
-
-    <link rel="manifest" href="/manifest.json">
-    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async></script>
+  <link rel="manifest" href="/manifest.json">
+  <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async></script>
     <script>
       var host = "girishrawat.github.io";
       if ((host == window.location.host) && (window.location.protocol != "https:"))
@@ -56,165 +55,193 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Portfolio">
-    <meta name="author" content="Girish Rawat">
-    <title>I'm Girish</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/1-col-portfolio.css" rel="stylesheet">
-    <link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>The Business Daily</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Theme CSS -->
+    <link href="css/clean-blog.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
 </head>
 
 <body>
 
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
+                    Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand">Hello, I'm Girish</a>
+                <a class="navbar-brand" href="index.html">The Business Daily</a>
             </div>
 
+            <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="https://github.com/girishrawat" target="_blank">Github</a>
+                        <a href="index.html">Design</a>
                     </li>
                     <li>
-                        <a href="https://in.linkedin.com/in/girishrawat" target="_blank">LinkedIn</a>
+                        <a href="about.html">Startups</a>
                     </li>
                     <li>
-                        <a href="https://launchpad.net/~emailgirishrawat" target="_blank">Launchpad</a>
+                        <a href="post.html">Growth</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Marketing</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="intro-header" style="background-image: url('img/home-bg.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="site-heading">
+                        <h1>The Business Daily </h1>
+                        <hr class="small">
+                        <span class="subheading">Your daily does of #startups #design #growth and #marketing</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-preview">
+                    <a href="post.html">
+                        <h2 class="post-title">
+                            Man must explore, and this is exploration at its greatest
+                        </h2>
+                        <h3 class="post-subtitle">
+                            Problems look mighty small from 150 miles up
+                        </h3>
+                    </a>
+                    <p class="post-meta">Posted by <a href="#">Start Bootstrap</a> on September 24, 2014</p>
+                </div>
+                <hr>
+                <div class="post-preview">
+                    <a href="post.html">
+                        <h2 class="post-title">
+                            I believe every human has a finite number of heartbeats. I don't intend to waste any of mine.
+                        </h2>
+                    </a>
+                    <p class="post-meta">Posted by <a href="#">Start Bootstrap</a> on September 18, 2014</p>
+                </div>
+                <hr>
+                <div class="post-preview">
+                    <a href="post.html">
+                        <h2 class="post-title">
+                            Science has not yet mastered prophecy
+                        </h2>
+                        <h3 class="post-subtitle">
+                            We predict too much for the next year and yet far too little for the next ten.
+                        </h3>
+                    </a>
+                    <p class="post-meta">Posted by <a href="#">Start Bootstrap</a> on August 24, 2014</p>
+                </div>
+                <hr>
+                <div class="post-preview">
+                    <a href="post.html">
+                        <h2 class="post-title">
+                            Failure is not an option
+                        </h2>
+                        <h3 class="post-subtitle">
+                            Many say exploration is part of our destiny, but it’s actually our duty to future generations.
+                        </h3>
+                    </a>
+                    <p class="post-meta">Posted by <a href="#">Start Bootstrap</a> on July 8, 2014</p>
+                </div>
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    <li class="next">
+                        <a href="#">Older Posts &rarr;</a>
                     </li>
                 </ul>
             </div>
         </div>
-    </nav>
-
-
-    <div class="container">
-
-    <!--PROJECTS-->
-        <div class="row">
-            <div class="col-lg-12">
-                <h1 class="page-header">Projects</h1>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-5">
-                <h3>The Food Bot</h3>
-                <h4>December 2015</h4>
-                <p>Twitter growth hack using an automated script. Follows, likes, tweets, retweets about food.</p>
-                <a class="btn btn-info" href="https://twitter.com/thefoodbot" target="_blank">Twitter <span class="glyphicon glyphicon-chevron-right"></span></a>
-                <a class="btn btn-primary" href="https://github.com/GirishRawat/Food-Bot" target="_blank">Github </a>
-            </div>
-        </div>
-
-        <hr>
-
-        <div class="row">
-            <div class="col-md-5">
-                <h3>Appwalle</h3>
-                <h4>August 2015 - InMobi Hackday Fall`15</h4>
-                <p>Appwalle is an crossplatform app supported by Head Held High. Built for FreedomHacks`15 Appwalle empowers the underprivileged by introducing them to the internet and basic apps. Applwalle is available for English and the local language. Aapwalle is built using PhoneGap and is cross platform.</p>
-                <a class="btn btn-success" href="#">Install <span class="glyphicon glyphicon-chevron-right"></span></a>
-                <a class="btn btn-primary" href="https://github.com/GirishRawat/Appwalle" target="_blank">Github </a>
-            </div>
-        </div>
-
-        <hr>
-
-        <div class="row">
-            <div class="col-md-5">
-                <h3>Cross Platform</h3>
-                <h4>June 2015 - HackIndia`15</h4>
-                <p>Cross Platform is a web app for file sharing. So now your TV can receive the movie you send from your phone. Your smartwatch can recieve text files you send from your laptop.
-                <br>Technologies used:1) AWS S3 2) Digitsl Ocean 3) Firebase <br> Covered by Doordarshan and NDTV on national TV. </p>
-                <a class="btn btn-primary" href="https://github.com/GirishRawat/Cross-Platform" target="_blank">Github </a>
-                <a class="btn btn-warning" href="http://devpost.com/software/cross-platform" target="_blank">Devpost </a>
-            </div>
-        </div>
-
-
-        <hr>
-
-        <div class="row">
-            <div class="col-md-5">
-                <h3>Air Rush</h3>
-                <h4>July 2014 - Harvard CS50</h4>
-                <p>Android Game using Corona SDK's physics engine. Used Lua for programming and Corel Draw for graphics.</p>
-                <a class="btn btn-success" href="https://www.dropbox.com/s/oh1fz1db5u1a4f1/Air%20Rush.apk?dl=0" target="_blank">Install <span class="glyphicon glyphicon-chevron-right"></span></a>
-                
-            </div>
-        </div>
-
-    <br>
-    <br>
-
-    <!--SCREENCASTS-->
-        <div class="row">
-            <div class="col-lg-12">
-                <h1 class="page-header">Screencasts</h1>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-5">
-                <h3>Introduction to Ubuntu App Development</h3>
-                <h4>January 2016 - Ubuntu</h4>
-                <p>Technical screencast for starting Ubuntu application development using QML or JavaScript.<br>Published on Ubuntu's official blog.</p>
-                <a class="btn btn-danger" href="https://www.youtube.com/watch?v=kPLpbo9H-10&list=PL5zZw0qYQQLNzK8xDN8LP0kpPlQn4S1wA&index=2" target="_blank">Youtube<span class="glyphicon glyphicon-chevron-right"></span></a>
-            </div>
-        </div>
-
-        <hr>
-
-        <div class="row">
-            <div class="col-md-5">
-                <h3>Installing Ubuntu on macOS using virtualisation</h3>
-                <h4>January 2016 - Ubuntu</h4>
-                <p>Technical screencast on how to get started with installing Ubuntu on macOS using Virtual Box. </p>
-                <a class="btn btn-danger" href="https://www.youtube.com/watch?v=4SbTXqPk_1Y&list=PL5zZw0qYQQLNzK8xDN8LP0kpPlQn4S1wA" target="_blank">Youtube<span class="glyphicon glyphicon-chevron-right"></span></a>
-            </div>
-        </div>
-
-    <br>
-    <br>
-
-    <!--DOCUMENTATION-->
-        <div class="row">
-            <div class="col-lg-12">
-                <h1 class="page-header">Documentation and Technical Writing</h1>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-5">
-                <h3>Ubuntu Mobile OS</h3>
-                <h4>January 2016 - Ubuntu</h4>
-                <p>Was responsible for writing documentation, developer READMEs and technical FAQs for native Ubuntu Mobile OS applications. <br> Applications included Music Player, Weather, Calendar, Calculator and Document Viewer.</p>
-                <a class="btn btn-warning" href="https://code.launchpad.net/~emailgirishrawat/+branches?field.category=OWNED&field.category-empty-marker=1&field.lifecycle=ALL&field.lifecycle-empty-marker=1&field.sort_by=most+recently+changed+first&field.sort_by-empty-marker=1" target="_blank">Launchpad<span class="glyphicon glyphicon-chevron-right"></span></a>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-5">
-                <h3>Interviewing Ken VanDine for OMG! Ubuntu!</h3>
-                <h4>January 2016 - Ubuntu</h4>
-                <p><a href="https://wiki.ubuntu.com/KenVanDine" target="_blank">Ken VanDine</a> is the Director of Engineering at Ubuntu Mobile. I was contacted by the blog to interview Ken on topics related to the upcoming versions of Ubuntu OS and Convergence. </p>
-                <a class="btn btn-warning" href="Interview.md" target="_blank">Read Transcript<span class="glyphicon glyphicon-chevron-right"></span></a>
-            </div>
-        </div>
-
-        <hr>
     </div>
 
-    <script type="text/javascript" src="js/jquery.js"></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <ul class="list-inline text-center">
+                        <li>
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <p class="copyright text-muted">Copyright &copy; The Business Daily, 2016</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="js/clean-blog.min.js"></script>
 
 </body>
 
