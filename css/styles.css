@@ -843,27 +843,6 @@ h1:after {
 
 
 
-/*-------------SCOUTING-------------*/
-
-.facebook {
-	height: 800px;
-	display: flex;
-	align-items: center;
-}
-
-/*.facebook img {
-	display: flex;
-	width: 100%;
-}*/
-
-// .message {
-// 	display: flex;
-// 	align-self: center;
-// }
-
-
-
-
 
 /*-------------SCOUTING-------------*/
 
@@ -877,19 +856,6 @@ h1:after {
 	margin: 40px auto;
 }
 
-/*
-.me_text {
-	color: red;
-	text-decoration: underline;
-	cursor: pointer;
-}
-.me_text:hover ~ .me {
-	opacity: 1;
-	right: -50%;
-	display: block;
-	cursor: pointer;
-}
-*/
 
 
 /*-------------ME-------------*/
