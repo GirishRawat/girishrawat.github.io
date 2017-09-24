@@ -1,9 +1,0 @@
-HTTP/1.1 206 Partial Content
-Server: SurgeCDN/1.1.0
-Date: Sat, 23 Sep 2017 00:36:46 GMT
-Cache-Control: public, max-age=31536000, no-cache
-ETag: "42463e7da6e1810b04b7e9ab61404596"
-Content-Type: image/jpeg
-Accept-Ranges: bytes
-Response-Time: 3ms
-Cont
