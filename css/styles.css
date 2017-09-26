@@ -16,12 +16,12 @@ body{
 a{
 	font-weight: 400;
 	text-decoration: none;
-	color: rgba(82,199,255,1);
+	color: #3366BB; 
 	position: relative;
 }
 a:hover{
 	text-decoration: none;
-	color: rgba(55,163,214,1);
+	color: #3366BB;
 	cursor: pointer;
 }
 a.hoverline:before {
@@ -142,10 +142,6 @@ a.hoverline:hover:before{
 /*.bue2:hover {
 	color: rgba(255,255,255,1);
 }*/
-
-.space {
-  margin-top:24px;
-}
 
 .bue span {
 	font-weight: 600;
@@ -769,6 +765,8 @@ h1:after {
 
 .weblink {
 	margin-bottom: 40px;
+  margin-top: 10px;
+  font-size: 18px;
 }
 
 .project-text-title {
@@ -860,6 +858,19 @@ h1:after {
 	margin: 40px auto;
 }
 
+/*
+.me_text {
+	color: red;
+	text-decoration: underline;
+	cursor: pointer;
+}
+.me_text:hover ~ .me {
+	opacity: 1;
+	right: -50%;
+	display: block;
+	cursor: pointer;
+}
+*/
 
 
 /*-------------ME-------------*/

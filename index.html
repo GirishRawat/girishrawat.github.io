@@ -19,13 +19,14 @@
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="#130019">
     <meta name="theme-color" content="#130019">
-
+    <script src="js/modal.js"></script>
     <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
 	<link rel="manifest" href="favicon/manifest.json">
 	<link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
 	<meta name="theme-color" content="#ffffff">
+	<link rel="stylesheet" type="text/css" href="css/modal.min.css">
 </head>
 
 <body class="body">
@@ -67,8 +68,11 @@
 							<div class="button button--isi button--text-thick button--text-upper button--size-s"><i class="fa fa-linkedin"></i></div>
 						</a>
 						<a href="" target="none">
-							<div class="button button--isi2 button--text-thick button--text-upper button--size-s">R&Eacute;SUM&Eacute;</div>
+							<div class="button button--isi2 button--text-thick button--text-upper button--size-s js-video-btn">R&Eacute;SUM&Eacute;</div>
 						</a>
+						<button class="js-video-btn" data-video-id="7TUOI23spt0">kOpen Video</button>
+						<button href="https://github.com/appleple/modal-video" class="btn btn-red js-video-btn" data-video-id="7TUOI23spt0">Open Video</button>
+
 					</div>
 				</div>
 			</div>
@@ -119,15 +123,20 @@
 					</div>
 					<div class="col-md-7 col-md-offset-1 col-sm-7 col-sm-offset-1">
 						<div class="preview-info">
-							<div class="preview-title">VWO: <span> Product Intern</span></div>
+							<div class="preview-title js-video-btn">VWO: <span> Product Intern</span></div>
 							<div class="preview-date">DECEMBER 2016 / LANDING PAGE</div>
 						</div>
+					<script>
+						window.addEventListener('DOMContentLoaded',function(){	
+						new ModalVideo(".js-video-btn");
+					});
+					</script>
 					</div>
 				</div>
 			</a>
 
-			<a href="#">
-				<div class="row preview-row">
+			<a>
+				<div class="row preview-row js-video-btn" data-video-id="nK21haYTkPg">
 					<div class="col-md-4 col-sm-4">
 						<img src="images/thumbnails/slik.png" class="img-responsive">
 					</div>
@@ -154,8 +163,8 @@
 				</div>
 			</a>
 
-			<a href="#">
-				<div class="row preview-row">
+			<a>
+				<div class="row preview-row js-video-btn" data-video-id="Ms-Eo68D4p4">
 					<div class="col-md-4 col-sm-4">
 						<img src="images/thumbnails/music.png" class="img-responsive">
 					</div>
@@ -229,7 +238,7 @@
 
 
 
-	<script src="../ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 	<script src="js/main2.js"></script>
 	<script src="js/scroll.js"></script>
 
