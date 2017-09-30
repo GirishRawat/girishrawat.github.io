@@ -1,5 +1,5 @@
   var global_caliber = 0;
-  var counter = 0.0;
+  var counter = 0;
 
 if ('Accelerometer' in window && 'Gyroscope' in window) {
   //document.getElementById('moApi').innerHTML = 'Generic Sensor API';
