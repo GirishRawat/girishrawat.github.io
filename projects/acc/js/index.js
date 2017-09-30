@@ -59,8 +59,8 @@ function MaccelerationHandler(acceleration, targetId) {
                   x = 1;
               }
 
-              document.body.style.background = color;
-            }, 50);
+              document.body.style.backgroundImage = "url('1.png')";
+            }, 50)
 
           setTimeout(function() { 
             clearInterval(timer); 
