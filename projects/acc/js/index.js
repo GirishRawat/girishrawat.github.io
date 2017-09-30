@@ -59,7 +59,7 @@ function MaccelerationHandler(acceleration, targetId) {
     var newParagraph = document.createElement('p');
     newParagraph.textContent = comment;
     document.getElementById("updateDiv").appendChild(newParagraph);
-    document.getElementById('updateDiv').style.backgroundolor = "#fefefe";
+    document.body.style.backgroundColor = "red";
   }
 }
 
