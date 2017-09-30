@@ -49,12 +49,21 @@ function rotationHandler(rotation) {
   info = xyz.replace("X", rotation.alpha && rotation.alpha.toFixed(3));
   info = info.replace("Y", rotation.beta && rotation.beta.toFixed(3));
   info = info.replace("Z", rotation.gamma && rotation.gamma.toFixed(3));
+
+  var xx = (rotation.alpha && rotation.alpha.toFixed(3));
+  var yy = (rotation.beta && rotation.beta.toFixed(3));
+  var zz = (rotation.gamma && rotation.gamma.toFixed(3));
+
+  var mean = (((xx)^2) + ((yy)^2) + ((zz)^2))*(1/2);
+  document.getElementById("mean").innerHTML = mean;
   document.getElementById("moRotation").innerHTML = info;
 }
 
 function intervalHandler(interval) {
   document.getElementById("moInterval").innerHTML = interval;
 }
+
+
 
 if (location.href.indexOf('debug') !== -1) {
   document.getElementById('alert').style.display = 'none';
