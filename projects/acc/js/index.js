@@ -50,7 +50,7 @@ function MaccelerationHandler(acceleration, targetId) {
 
   var zz = (acceleration.z && acceleration.z.toFixed(3));
 
-  if (zz>(zz+0.3)) {
+  if (zz>10) {
 
     var newPara = document.createElement('p');
     newPara.textContent = zz;
