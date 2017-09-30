@@ -8,8 +8,6 @@ if ('Accelerometer' in window && 'Gyroscope' in window) {
   let accelerometerWithGravity = new Accelerometer({includeGravity: true});
   accelerometerWithGravity.addEventListener('reading', e => MaccelerationHandler(accelerometerWithGravity, 'moAccelGrav'));
   accelerometerWithGravity.start();
-  var global_caliber = 0;
-  var counter = 1;
   
   let gyroscope = new Gyroscope();
   gyroscope.addEventListener('reading', e => rotationHandler({
@@ -51,7 +49,6 @@ function MaccelerationHandler(acceleration, targetId) {
   var zz = (acceleration.z && acceleration.z.toFixed(3));
 
   if (zz>10) {
-
     var newPara = document.createElement('p');
     newPara.textContent = zz;
     document.getElementById("updateDiv").appendChild(newPara);
