@@ -50,7 +50,7 @@ function MaccelerationHandler(acceleration, targetId) {
   var info, xyz = "[X, Y, Z]";
 
   var zz = (acceleration.z && acceleration.z.toFixed(3));
-  global_caliber += zz;
+  global_caliber += zz.toFixed(3);
   counter += 1;
   if (zz>10) {
     var avg = global_caliber;
