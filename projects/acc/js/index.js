@@ -55,7 +55,7 @@ function MaccelerationHandler(acceleration, targetId) {
   if (zz>10) {
     var avg = global_caliber;
     var newPara = document.createElement('p');
-    newPara.textContent = (global_caliber);
+    newPara.textContent = (zz);
     document.getElementById("updateDiv").appendChild(newPara);
     document.body.style.backgroundColor = "red";
   }
