@@ -93,4 +93,4 @@ function intervalHandler(interval) {
 
 if (location.href.indexOf('debug') !== -1) {
   //document.getElementById('alert').style.display = 'none';
-}
+} 
