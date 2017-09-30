@@ -52,7 +52,7 @@ function MaccelerationHandler(acceleration, targetId) {
   var zz = (acceleration.z && acceleration.z.toFixed(3));
   global_caliber += zz.toFixed(3);
   counter += 1;
-  if (zz>10) {
+  if (zz>10.0) {
     var avg = global_caliber;
     var newPara = document.createElement('p');
     newPara.textContent = (global_caliber/counter);
