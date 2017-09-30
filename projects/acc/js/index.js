@@ -25,7 +25,7 @@ if ('Accelerometer' in window && 'Gyroscope' in window) {
   
   window.addEventListener('devicemotion', function (eventData) {
     accelerationHandler(eventData.acceleration, 'moAccel');
-    accelerationHandler(eventData.accelerationIncludingGravity, 'moAccelGrav');
+    MaccelerationHandler(eventData.accelerationIncludingGravity, 'moAccelGrav');
     rotationHandler(eventData.rotationRate);
     intervalHandler(eventData.interval);
   }, false);
@@ -43,6 +43,24 @@ function accelerationHandler(acceleration, targetId) {
   document.getElementById(targetId).innerHTML = info;
 }
 
+function MaccelerationHandler(acceleration, targetId) {
+  var info, xyz = "[X, Y, Z]";
+
+  info = xyz.replace("X", acceleration.x && acceleration.x.toFixed(3));
+  info = info.replace("Y", acceleration.y && acceleration.y.toFixed(3));
+  info = info.replace("Z", acceleration.z && acceleration.z.toFixed(3));
+  document.getElementById(targetId).innerHTML = info;
+
+  var zz = (acceleration.z && acceleration.z.toFixed(3));
+
+  if (zz>9.9) {
+    var comment = "Ball Dropped";
+    var newParagraph = document.createElement('p');
+    newParagraph.textContent = comment;
+    document.getElementById("updateDiv").appendChild(newParagraph)
+  }
+}
+
 function rotationHandler(rotation) {
   var info, xyz = "[X, Y, Z]";
 
@@ -57,6 +75,7 @@ function rotationHandler(rotation) {
   var mean = (((xx)^2) + ((yy)^2) + ((zz)^2))*(1/2);
   document.getElementById("mean").innerHTML = mean;
   document.getElementById("moRotation").innerHTML = info;
+
 }
 
 function intervalHandler(interval) {
