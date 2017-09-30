@@ -1,3 +1,4 @@
+var avgVal = new Array(4);
 
 if ('Accelerometer' in window && 'Gyroscope' in window) {
   //document.getElementById('moApi').innerHTML = 'Generic Sensor API';
@@ -45,21 +46,32 @@ function accelerationHandler(acceleration, targetId) {
 }
 
 function MaccelerationHandler(acceleration, targetId) {
-  var info, xyz = "[X, Y, Z]";
   var global_caliber = 0.0;
   var counter = 0.0;
 
   var zz = (acceleration.z && acceleration.z.toFixed(3));
   global_caliber += zz;
   counter += 1.0;
-  
+
+  var avg;
+
+  for (var i = 0; i<5; i++) {
+    avgVal[i] += zz;
+  } 
+
+  for (var i = 0; i<5; i++) {
+    avg += avgVal[i]; 
+  } 
+
   if (zz>10) {
-    var avg = global_caliber;
     var newPara = document.createElement('p');
-    newPara.textContent = (global_caliber);
+    newPara.textContent = (avg/5);
     document.getElementById("updateDiv").appendChild(newPara);
     document.body.style.backgroundColor = "red";
   }
+
+}
+
 }
 
 
