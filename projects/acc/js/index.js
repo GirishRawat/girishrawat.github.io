@@ -59,7 +59,7 @@ function MaccelerationHandler(acceleration, targetId) {
                   x = 1;
               }
 
-              document.body.style.background = "#000000";
+              document.body.style.background = color;
             }, 50);
 
           setTimeout(function() { 
@@ -93,4 +93,4 @@ function intervalHandler(interval) {
 
 if (location.href.indexOf('debug') !== -1) {
   //document.getElementById('alert').style.display = 'none';
-} 
+}
