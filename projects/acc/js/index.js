@@ -54,11 +54,7 @@ function MaccelerationHandler(acceleration, targetId) {
   var zz = (acceleration.z && acceleration.z.toFixed(3));
 
   if (zz>9.8) {
-    console.log("larger");
-    var comment = "Ball Dropped";
-    var newParagraph = document.createElement('p');
-    newParagraph.textContent = comment;
-    document.getElementById("updateDiv").appendChild(newParagraph)
+    document.getElementById('updateDiv').style.backgroundColor = "#fefefe";
   }
 }
 
