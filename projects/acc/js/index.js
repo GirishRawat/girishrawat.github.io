@@ -50,12 +50,12 @@ function MaccelerationHandler(acceleration, targetId) {
   var info, xyz = "[X, Y, Z]";
 
   var zz = (acceleration.z && acceleration.z.toFixed(3));
-  global_caliber += zz.toFixed(3);
+  global_caliber += zz;
   counter += 1;
   if (zz>10) {
     var avg = global_caliber;
     var newPara = document.createElement('p');
-    newPara.textContent = (global_caliber/counter);
+    newPara.textContent = (global_caliber);
     document.getElementById("updateDiv").appendChild(newPara);
     document.body.style.backgroundColor = "red";
   }
