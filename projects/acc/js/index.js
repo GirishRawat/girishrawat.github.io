@@ -1,5 +1,6 @@
   var global_caliber = 0;
   var counter = 0;
+
 if ('Accelerometer' in window && 'Gyroscope' in window) {
   //document.getElementById('moApi').innerHTML = 'Generic Sensor API';
   
@@ -50,11 +51,11 @@ function MaccelerationHandler(acceleration, targetId) {
 
   var zz = (acceleration.z && acceleration.z.toFixed(3));
   global_caliber += zz;
-  counter +=1;
+  counter += 1;
   if (zz>10) {
-    var avg = (global_caliber/counter);
+    var avg = global_caliber;
     var newPara = document.createElement('p');
-    newPara.textContent = avg;
+    newPara.textContent = global_caliber;
     document.getElementById("updateDiv").appendChild(newPara);
     document.body.style.backgroundColor = "red";
   }
