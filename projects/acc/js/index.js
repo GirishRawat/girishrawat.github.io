@@ -49,7 +49,7 @@ function MaccelerationHandler(acceleration, targetId) {
   var zz = (acceleration.z && acceleration.z.toFixed(3));
 
   if (zz>10) {
-                x = 1;
+            x = 1;
             var timer = setInterval(function change() {
               if (x === 1) {
                   color = "#ffffff";
@@ -59,7 +59,7 @@ function MaccelerationHandler(acceleration, targetId) {
                   x = 1;
               }
 
-              document.body.style.background = "url('1.png') no-repeat center cover";
+              document.body.style.background = color;
             }, 50);
 
           setTimeout(function() { 
