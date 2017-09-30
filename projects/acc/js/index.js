@@ -8,6 +8,8 @@ if ('Accelerometer' in window && 'Gyroscope' in window) {
   let accelerometerWithGravity = new Accelerometer({includeGravity: true});
   accelerometerWithGravity.addEventListener('reading', e => MaccelerationHandler(accelerometerWithGravity, 'moAccelGrav'));
   accelerometerWithGravity.start();
+  var global_caliber = 0;
+  var counter = 1;
   
   let gyroscope = new Gyroscope();
   gyroscope.addEventListener('reading', e => rotationHandler({
@@ -47,11 +49,17 @@ function MaccelerationHandler(acceleration, targetId) {
   var info, xyz = "[X, Y, Z]";
 
   var zz = (acceleration.z && acceleration.z.toFixed(3));
-
+  global_caliber += zz;
+  counter +=1;
   if (zz>10) {
+    var avg = (global_caliber/counter);
+    var newPara = document.createElement('p');
+    newPara.textContent = avg;
+    document.getElementById("updateDiv").appendChild(newPara);
     document.body.style.backgroundColor = "red";
   }
 }
+
 
 function rotationHandler(rotation) {
   var info, xyz = "[X, Y, Z]";
