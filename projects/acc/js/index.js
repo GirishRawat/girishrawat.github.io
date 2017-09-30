@@ -2,11 +2,11 @@ if ('Accelerometer' in window && 'Gyroscope' in window) {
   document.getElementById('moApi').innerHTML = 'Generic Sensor API';
   
   let accelerometer = new Accelerometer();
-  accelerometer.addEventListener('reading', e => accelerationHandler(accelerometer, 'moAccel'));
+  accelerometer.addEventListener('reading', e => MaccelerationHandler(accelerometer, 'moAccel'));
   accelerometer.start();
   
   let accelerometerWithGravity = new Accelerometer({includeGravity: true});
-  accelerometerWithGravity.addEventListener('reading', e => accelerationHandler(accelerometerWithGravity, 'moAccelGrav'));
+  accelerometerWithGravity.addEventListener('reading', e => MaccelerationHandler(accelerometerWithGravity, 'moAccelGrav'));
   accelerometerWithGravity.start();
   
   let gyroscope = new Gyroscope();
@@ -53,7 +53,8 @@ function MaccelerationHandler(acceleration, targetId) {
 
   var zz = (acceleration.z && acceleration.z.toFixed(3));
 
-  if (zz>9.9) {
+  if (zz>9.7) {
+    console.log("larger");
     var comment = "Ball Dropped";
     var newParagraph = document.createElement('p');
     newParagraph.textContent = comment;
