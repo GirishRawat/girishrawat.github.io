@@ -48,7 +48,7 @@ function MaccelerationHandler(acceleration, targetId) {
 
   var zz = (acceleration.z && acceleration.z.toFixed(3));
 
-  if (zz>9.8) {
+  if (zz>10) {
     document.body.style.backgroundColor = "red";
   }
 }
