@@ -46,14 +46,14 @@ function accelerationHandler(acceleration, targetId) {
 }
 
 function MaccelerationHandler(acceleration, targetId) {
-  var global_caliber = 0.0;
-  var counter = 0.0;
+  var global_caliber = 0;
+  var counter = 0;
 
   var zz = (acceleration.z && acceleration.z.toFixed(3));
   global_caliber += zz;
-  counter += 1.0;
+  counter += 1;
 
-  var avg;
+  var avg=0;
 
   for (var i = 0; i<5; i++) {
     avgVal[i] += zz;
