@@ -1,3 +1,5 @@
+  var global_caliber = 0;
+  var counter = 0;
 if ('Accelerometer' in window && 'Gyroscope' in window) {
   //document.getElementById('moApi').innerHTML = 'Generic Sensor API';
   
@@ -8,8 +10,6 @@ if ('Accelerometer' in window && 'Gyroscope' in window) {
   let accelerometerWithGravity = new Accelerometer({includeGravity: true});
   accelerometerWithGravity.addEventListener('reading', e => MaccelerationHandler(accelerometerWithGravity, 'moAccelGrav'));
   accelerometerWithGravity.start();
-  var global_caliber = 0;
-  var counter = 1;
   
   let gyroscope = new Gyroscope();
   gyroscope.addEventListener('reading', e => rotationHandler({
