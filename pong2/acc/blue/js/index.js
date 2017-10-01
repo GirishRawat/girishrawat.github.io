@@ -58,13 +58,13 @@ function MaccelerationHandler(acceleration, targetId) {
                   color = "#000000";
                   x = 1;
               }
-
-              document.body.style.background = "#000000";
             }, 50);
 
           setTimeout(function() { 
             clearInterval(timer); 
           }, 1000); 
+
+          document.body.style.background = "#000000";
   }
 }
 
