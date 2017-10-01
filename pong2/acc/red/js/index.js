@@ -43,12 +43,31 @@ function accelerationHandler(acceleration, targetId) {
   //document.getElementById(targetId).innerHTML = info;
 }
 
+  function yell() {
+    console.log("This happened!");
+    console.log(blueVal);
+    blueVal++;
+
+
+     var playersRef = firebase.database().ref("players/");
+
+    playersRef.set ({
+      blue: blueVal,
+      red: redVal
+    });
+  }
+
+var test = true;
+
 function MaccelerationHandler(acceleration, targetId) {
   var info, xyz = "[X, Y, Z]";
 
   var zz = (acceleration.z && acceleration.z.toFixed(3));
 
-  if (zz>10) {
+
+  if (zz>10 && test) {
+            test = false;
+
             x = 1;
             var timer = setInterval(function change() {
               if (x === 1) {
@@ -65,6 +84,7 @@ function MaccelerationHandler(acceleration, targetId) {
           setTimeout(function() { 
             clearInterval(timer); 
           }, 1000); 
+          yell();
   }
 }
 
