@@ -46,7 +46,7 @@ function accelerationHandler(acceleration, targetId) {
   function yell() {
     console.log("This happened!");
     console.log(blueVal);
-    blueVal++;
+    redVal++;
 
 
      var playersRef = firebase.database().ref("players/");
