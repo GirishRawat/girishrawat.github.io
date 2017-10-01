@@ -45,7 +45,7 @@ function accelerationHandler(acceleration, targetId) {
 
   function yell() {
     console.log("This happened!");
-    document.body.style.background = "#000000";
+    document.body.style.backgroundColor = "black !important";
   }
 
 var test = true;
