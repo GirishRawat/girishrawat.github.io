@@ -43,15 +43,15 @@ function accelerationHandler(acceleration, targetId) {
   //document.getElementById(targetId).innerHTML = info;
 }
 
-function MaccelerationHandler(acceleration, targetId) {
-  var info, xyz = "[X, Y, Z]";
-
-  var zz = (acceleration.z && acceleration.z.toFixed(3));
-
   function yell() {
     console.log("This happened!");
     document.body.style.background = #000000;
   }
+
+function MaccelerationHandler(acceleration, targetId) {
+  var info, xyz = "[X, Y, Z]";
+
+  var zz = (acceleration.z && acceleration.z.toFixed(3));
 
   if (zz>10) {
             x = 1;
@@ -69,8 +69,8 @@ function MaccelerationHandler(acceleration, targetId) {
 
           setTimeout(function() { 
             clearInterval(timer); 
-            yell();
           }, 1000); 
+          yell();
   }
 }
 
