@@ -37,6 +37,10 @@ playersRef.set ({
   red: 3
 });
 
+  function myFunction() {
+    document.body.setAttribute('style', 'background-color:red !important');
+  }
+
   var blueRef = firebase.database().ref('players/blue');
   blueRef.on('value', function(snapshot) {
     blueVal = snapshot.val();
@@ -44,7 +48,7 @@ playersRef.set ({
 
     if(blueVal>=2) {
       console.log("Red wins!");
-      document.body.setAttribute('style', 'background-color:red !important');
+      setTimeout(myFunction, 2000);
     } 
   });
 
