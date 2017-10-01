@@ -30,6 +30,12 @@
   var blueVal;
   var redVal;
 
+   var playersRef = firebase.database().ref("players/");
+
+playersRef.set ({
+  blue: 0,
+  red: 3
+});
 
   var blueRef = firebase.database().ref('players/blue');
   blueRef.on('value', function(snapshot) {
