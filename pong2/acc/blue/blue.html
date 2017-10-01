@@ -8,11 +8,46 @@
 
   <!-- Origin Trial Token, feature = Generic Sensors, origin = https://codepen.io, expires = 2017-11-02 -->
   <meta http-equiv="origin-trial" data-feature="Generic Sensors" data-expires="2017-11-02" content="AmeKCa8GH7Bx9U51c0xZefPutFDnrfto7jIflJV1Tsv2pPCZdwO+XAW2iJXEtJQeSzE//kTbZo+0Jrpp+mSVOQMAAABkeyJvcmlnaW4iOiJodHRwczovL2NvZGVwZW4uaW86NDQzIiwiZmVhdHVyZSI6IkdlbmVyaWNTZW5zb3IiLCJleHBpcnkiOjE1MDk2MDg2MTEsImlzU3ViZG9tYWluIjp0cnVlfQ==">
-
+  <script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
   <link rel="stylesheet" href="css/main.css">
+  <script type="text/javascript">
+      var config = {
+    apiKey: "AIzaSyD7Yu-gBQWw-Q3Q8poCNi_zxEmIXf4YHV8",
+    authDomain: "techcrunch-e6d35.firebaseapp.com",
+    databaseURL: "https://techcrunch-e6d35.firebaseio.com",
+    projectId: "techcrunch-e6d35",
+    storageBucket: "techcrunch-e6d35.appspot.com",
+    messagingSenderId: "912011515345"
+  };
+  firebase.initializeApp(config);
+
+  var blueVal;
+  var redVal;
+
+
+  var blueRef = firebase.database().ref('players/blue');
+  blueRef.on('value', function(snapshot) {
+    blueVal = snapshot.val();
+    console.log(blueVal);
+
+    if(blueVal>=2) {
+      console.log("Red wins!");
+    } 
+  });
+
+  var redRef = firebase.database().ref('players/red');
+  redRef.on('value', function(snapshot) {
+    redVal = snapshot.val();
+    console.log(redVal);
+
+    if(redVal>=5) {
+      console.log("Blue wins!");
+    }
+  });
+  </script>
   <style type="text/css">
     html,
     body {
