@@ -48,12 +48,13 @@ function accelerationHandler(acceleration, targetId) {
     document.body.style.backgroundColor = "black !important";
     console.log(blueVal);
     blueVal++;
-    console.log(blueVal);
+
 
      var playersRef = firebase.database().ref("players/");
 
     playersRef.set ({
-      blue: blueVal
+      blue: blueVal,
+      red: redVal
     });
   }
 
