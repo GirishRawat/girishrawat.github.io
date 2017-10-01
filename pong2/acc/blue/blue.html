@@ -13,8 +13,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
   <link rel="stylesheet" href="css/main.css">
-  <script type="text/javascript">
-      var config = {
+  
+  <script>
+  // Initialize Firebase
+  var config = {
     apiKey: "AIzaSyD7Yu-gBQWw-Q3Q8poCNi_zxEmIXf4YHV8",
     authDomain: "techcrunch-e6d35.firebaseapp.com",
     databaseURL: "https://techcrunch-e6d35.firebaseio.com",
@@ -23,6 +25,8 @@
     messagingSenderId: "912011515345"
   };
   firebase.initializeApp(config);
+
+  console.log("Hello wORLD!");
 
   var blueVal;
   var redVal;
@@ -47,7 +51,9 @@
       console.log("Blue wins!");
     }
   });
-  </script>
+
+</script>
+
   <style type="text/css">
     html,
     body {
