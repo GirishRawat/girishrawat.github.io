@@ -48,12 +48,17 @@ function accelerationHandler(acceleration, targetId) {
     document.body.style.background = "#000000";
   }
 
+var test = true;
+
 function MaccelerationHandler(acceleration, targetId) {
   var info, xyz = "[X, Y, Z]";
 
   var zz = (acceleration.z && acceleration.z.toFixed(3));
 
-  if (zz>10) {
+
+  if (zz>10 && test) {
+            test = false;
+
             x = 1;
             var timer = setInterval(function change() {
               if (x === 1) {
