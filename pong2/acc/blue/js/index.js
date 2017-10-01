@@ -66,7 +66,6 @@ function MaccelerationHandler(acceleration, targetId) {
             clearInterval(timer); 
           }, 1000); 
 
-          document.body.style.background = #000000;
   }
 }
 
