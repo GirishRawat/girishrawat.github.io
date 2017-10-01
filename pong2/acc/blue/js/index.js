@@ -50,6 +50,7 @@ function MaccelerationHandler(acceleration, targetId) {
 
   function yell() {
     console.log("This happened!");
+    document.body.style.background = #000000;
   }
 
   if (zz>10) {
