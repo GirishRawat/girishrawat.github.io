@@ -9,9 +9,15 @@ body{
   font-family: Verdana;
 }
 
+.brightnessLvl, .automaticHeading {
+  margin-top: 10%;
+  color: white;
+  font-family: Verdana;
+}
+
 /* Code handling Button */
 
-.powerButton{
+.powerButton, .automaticPower{
   outline:none;
   height: 40px;
   text-align: center;
@@ -27,7 +33,7 @@ body{
    transition: all 0.3s;
 }
 
-.powerButton:after {
+.powerButton:after, .automaticPower:after {
 	content: '';
 	position: absolute;
 	z-index: -1;
@@ -36,7 +42,7 @@ body{
 	transition: all 0.3s;
 }
 
-.powerButton:hover{
+.powerButton:hover, .automaticPower:hover{
   color: #c2d9f7;
   background: #506b8f;
   border: 2px #506b8f solid;
@@ -44,11 +50,13 @@ body{
   cursor: pointer;
 }
 
+
+
 /* Sliders */
 
 .slider {
     -webkit-appearance: none;
-    width: 100%;
+    width: 60%;
     height: 15px;
     border-radius: 5px;   
     background: #d3d3d3;

@@ -15,6 +15,7 @@ $(document).ready(function(){
   var S1;
   var S3;
 
+  // For Power Button
   database.ref().on("value", function(snap){
     S1 = snap.val().S1;
     if(S1 == 1){
@@ -36,5 +37,35 @@ $(document).ready(function(){
       S1 = 1;
     }
   });
+
+    // For Automatic Power 
+    database.ref().on("value", function(snap){
+      S2 = snap.val().S2;
+      if(S2 == 1){
+        $(".automaticHeading").text("Automatic Power On");
+        $(".automaticPower").text("Turn Off");
+      } else {
+        $(".automaticHeading").text("Automatic Power Off");
+        $(".automaticPower").text("Turn On");
+      }
+    });
+
+    $(".automaticPower").click(function(){
+      var firebaseRef = firebase.database().ref().child("S2");
+      if(S2 == 1){
+        firebaseRef.set(0);
+        S2 = 0;
+      } else {
+        firebaseRef.set(1);
+        S2 = 1;
+      }
+    });
 });
+
+
+
+
+  
+
+
 
