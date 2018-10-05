@@ -9,16 +9,30 @@
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.4/themes/flick/jquery-ui.css">
   <script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
   <script src="JS/script.js"></script>
-  <script src="JS/jquery-ui-slider-pips.js"></script>
   <link rel="stylesheet" href="CSS/style.css" />
-  <link rel="stylesheet" href="CSS/jquery-ui-slider-pips.css" />
+
 </head>
 
 <body>
-  <h1 class="lightStatus"></h1>
-  <button class="powerButton"></button>
+  <h1 class="lightStatus" id="lightStatus"></h1>
+  <button class="powerButton" id="powerButton"></button>
   <h2 class="brightnessLvl"></h2>
-  <textarea class="brightness"></textarea>
+  <div class="slidecontainer">
+
+    <input type="range" min="1" max="100" value="10" class="slider" id="myRange">
+
+  </div>
+
 </body>
+
+<script>
+  // Sliders
+  var lightStatus = document.getElementById("lightStatus");
+  var slider = document.getElementById("myRange");
+
+  slider.oninput = function () {
+    lightStatus.innerHTML = this.value;
+  }
+</script>
 
 </html>
