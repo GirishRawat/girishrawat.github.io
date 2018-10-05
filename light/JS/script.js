@@ -19,12 +19,14 @@ $(document).ready(function(){
     S1 = snap.val().S1;
     if(S1 == 1){
       $(".lightStatus").text("The light is on");
+      $(".powerButton").text("Turn Off");
     } else {
       $(".lightStatus").text("The light is off");
+      $(".powerButton").text("Turn On");
     }
   });
 
-  $(".lightButton").click(function(){
+  $(".powerButton").click(function(){
     var firebaseRef = firebase.database().ref().child("S1");
     if(S1 == 1){
       firebaseRef.set(0);
