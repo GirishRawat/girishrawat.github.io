@@ -8,8 +8,43 @@ body{
   color: white;
   font-family: Verdana;
 }
-.lightButton{
-  font-size: 1.5em;
-  font-family: Verdana;
-  padding: 10px;
+
+/*
+
+Code handling Button
+
+*/
+
+.powerButton{
+  outline:none;
+  height: 40px;
+  text-align: center;
+  width: 130px;
+  border-radius:3px;
+  background: none;
+  border: 2px solid #fff;
+  color: #fff;
+  letter-spacing:1px;
+  text-shadow:0;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+   transition: all 0.3s;
 }
+
+.powerButton:after {
+	content: '';
+	position: absolute;
+	z-index: -1;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.powerButton:hover{
+  color: #c2d9f7;
+  background: #506b8f;
+  border: 2px #506b8f solid;
+  text-shadow: 0 0 21px #4170b3;
+  cursor: pointer;
+}
+
