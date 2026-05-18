@@ -4,144 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>State</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg-color: #f8fafc;
-            --sidebar-bg: #ffffff;
-            --text-main: #475569;
-            --text-light: #94a3b8;
-            --accent-pink: #E63F7F;
-            --accent-pink-light: #fdf2f7;
-            --border-color: #f1f5f9;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            min-height: 100vh;
-            display: flex;
-        }
-
-        /* Sidebar Styles */
-        .sidebar {
-            width: 300px;
-            background-color: var(--sidebar-bg);
-            margin: 1.5rem;
-            border-radius: 24px;
-            box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.05);
-            padding: 2rem 1.5rem;
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-            height: calc(100vh - 3rem);
-            overflow-y: auto;
-        }
-
-        /* Hide scrollbar for a cleaner look */
-        .sidebar::-webkit-scrollbar {
-            width: 0px;
-            background: transparent;
-        }
-
-        .logo-container {
-            margin-bottom: 0.5rem;
-            padding-left: 0.5rem;
-        }
-
-        .menu-section {
-            display: flex;
-            flex-direction: column;
-            gap: 0.25rem;
-        }
-
-        .menu-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            padding: 0.8rem 1rem;
-            text-decoration: none;
-            color: var(--text-main);
-            font-size: 1.05rem;
-            font-weight: 500;
-            border-radius: 12px;
-            transition: all 0.2s ease;
-        }
-
-        .menu-item svg {
-            color: #64748b;
-        }
-
-        .menu-item:hover {
-            background-color: #f8fafc;
-        }
-
-        .menu-item.active {
-            background-color: var(--accent-pink-light);
-            color: var(--accent-pink);
-        }
-
-        .menu-item.active svg {
-            color: var(--accent-pink);
-        }
-
-        hr {
-            border: none;
-            height: 1px;
-            background-color: var(--border-color);
-            margin: 0.5rem 1rem;
-        }
-
-        /* Recent Chats Section */
-        .section-title {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            padding: 0.8rem 1rem 0.5rem;
-            color: var(--text-main);
-            font-size: 1.05rem;
-            font-weight: 500;
-        }
-
-        .section-title svg {
-            color: #64748b;
-        }
-
-        .recent-list {
-            display: flex;
-            flex-direction: column;
-            gap: 0.1rem;
-        }
-
-        .recent-list a {
-            text-decoration: none;
-            color: var(--text-light);
-            font-size: 0.95rem;
-            padding: 0.6rem 1rem 0.6rem 3rem;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            transition: color 0.2s;
-        }
-
-        .recent-list a:hover {
-            color: var(--text-main);
-            background-color: #f8fafc;
-            border-radius: 8px;
-        }
-
-        .bottom-section {
-            margin-top: auto;
-        }
-
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -161,7 +24,7 @@
                 </svg>
                 <span>New Chat</span>
             </a>
-            <a href="#" class="menu-item active">
+            <a href="themes.html" class="menu-item">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
                     <polyline points="2 12 12 17 22 12"></polyline>
@@ -215,6 +78,8 @@
                 <span>Recent Chats</span>
             </div>
             <div class="recent-list">
+                <a href="#" style="color: var(--accent-pink);">i want to complain abo...</a>
+                <a href="#">What are my ward...</a>
                 <a href="#">Give me a brief summa...</a>
                 <a href="#">I want to create a new...</a>
                 <a href="#">i care about improving...</a>
