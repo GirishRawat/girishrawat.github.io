@@ -445,6 +445,333 @@ hr {
     letter-spacing: 0.05em;
 }
 
+/* Theme Details Specific Styles */
+.theme-details-header {
+    margin-bottom: 2rem;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    transition: color 0.2s;
+}
+
+.back-link:hover {
+    color: var(--text-main);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+}
+
+.header-left {
+    display: flex;
+    gap: 1.5rem;
+    flex: 1;
+}
+
+.theme-large-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: var(--radius-lg);
+    object-fit: cover;
+    border: 1px solid var(--border-subtle);
+}
+
+.theme-info-large h1 {
+    font-family: var(--font-headline);
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.theme-info-large p {
+    color: var(--text-muted);
+    margin-bottom: 0.75rem;
+}
+
+.theme-stats-large {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.trending-up {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    color: #10B981;
+}
+
+.motions-count {
+    color: var(--text-muted);
+}
+
+.statements-count {
+    color: var(--primary);
+}
+
+.minister-card {
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: 1rem 1.25rem;
+    background: var(--surface-bright);
+    min-width: 250px;
+}
+
+.minister-label {
+    font-family: var(--font-label);
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    display: block;
+    margin-bottom: 0.75rem;
+}
+
+.minister-profile {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.minister-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.minister-details h3 {
+    font-family: var(--font-headline);
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.minister-details p {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.filter-section {
+    margin-bottom: 2rem;
+}
+
+.filter-context {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+
+.filter-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.search-input {
+    padding: 0.6rem 1rem;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    outline: none;
+    min-width: 200px;
+}
+
+.search-input:focus {
+    border-color: var(--primary);
+}
+
+.tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+
+.tag-teal {
+    background-color: #4db6ac;
+    color: white;
+}
+
+.tag-teal svg {
+    opacity: 0.8;
+}
+
+.tag-close {
+    background: none;
+    border: none;
+    color: inherit;
+    font-size: 1rem;
+    cursor: pointer;
+    padding-left: 0.2rem;
+    opacity: 0.7;
+}
+
+.tag-close:hover {
+    opacity: 1;
+}
+
+.tag-outline-pink {
+    border-color: var(--primary-light);
+    color: var(--primary);
+    background: white;
+}
+
+.insight-summary-box {
+    border: 2px solid var(--primary-light);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    background: var(--surface-bright);
+    margin-bottom: 2.5rem;
+}
+
+.insight-sentence {
+    font-size: 1.1rem;
+    color: var(--text-main);
+    margin-bottom: 1.5rem;
+}
+
+.tag-teal-inline {
+    display: inline-block;
+    background-color: #e0f2f1;
+    color: #00897b;
+    padding: 0.1rem 0.4rem;
+    border-radius: var(--radius-sm);
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.insight-metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.insight-metric-card {
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.metric-label {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+.metric-value {
+    font-family: var(--font-headline);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.trend-positive {
+    color: #10B981;
+}
+
+.metric-trend-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.mini-bar-chart {
+    display: flex;
+    align-items: flex-end;
+    gap: 2px;
+    height: 30px;
+    width: 100px;
+}
+
+.bar {
+    flex: 1;
+    background-color: #34d399;
+    border-radius: 1px 1px 0 0;
+    opacity: 0.8;
+}
+
+.motions-section-title {
+    font-family: var(--font-headline);
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.motion-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.motion-card {
+    background: var(--surface-bright);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: 1.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.motion-card h4 {
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+}
+
+.motion-metadata {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.meta-tag {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    background: var(--surface-container-low);
+    padding: 0.2rem 0.5rem;
+    border-radius: var(--radius-sm);
+}
+
+.meta-scope {
+    color: var(--text-muted);
+}
+
+.info-btn {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+}
+
+.info-btn:hover {
+    color: var(--text-main);
+}
+
 @media (max-width: 1024px) {
     .themes-grid {
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
