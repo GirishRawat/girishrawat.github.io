@@ -1,333 +1,309 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>State - Themes</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>State - Themes</title>
+<link href="style.css" rel="stylesheet"/>
 </head>
 <body>
+<nav class="sidebar">
+<div class="logo-container">
+<svg height="60" viewbox="0 0 120 120" width="60" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#e2e8f0" height="120" rx="28" width="120"></rect>
+<path d="M 35 35 H 75 V 50 H 90 V 65 H 105 V 105 H 65 V 90 H 50 V 75 H 35 Z" fill="#E63F7F"></path>
+</svg>
+</div>
+<div class="menu-section">
+<a class="menu-item" href="index.html">
+<svg fill="none" height="22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="22">
+<rect height="18" rx="4" ry="4" width="18" x="3" y="3"></rect>
+<path d="M9 9v6"></path><path d="M12 7v10"></path><path d="M15 10v4"></path>
+</svg>
+<span>New Chat</span>
+</a>
+<a class="menu-item active" href="themes.html">
+<svg fill="none" height="22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="22">
+<polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+<polyline points="2 12 12 17 22 12"></polyline>
+<polyline points="2 17 12 22 22 17"></polyline>
+</svg>
+<span>Themes</span>
+</a>
+<a class="menu-item" href="#">
+<svg fill="none" height="22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="22">
+<circle cx="12" cy="12" r="10"></circle>
+<line x1="2" x2="22" y1="12" y2="12"></line>
+<path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+</svg>
+<span>Map</span>
+</a>
+</div>
+<hr/>
+<div class="menu-section">
+<a class="menu-item" href="#">
+<svg fill="none" height="22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="22">
+<line x1="12" x2="12" y1="5" y2="19"></line>
+<line x1="5" x2="19" y1="12" y2="12"></line>
+</svg>
+<span>Create Motion</span>
+</a>
+<a class="menu-item" href="#">
+<svg fill="none" height="22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="22">
+<path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+<path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+</svg>
+<span>Notifications</span>
+</a>
+<a class="menu-item" href="#">
+<svg fill="none" height="22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="22">
+<path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+<circle cx="12" cy="7" r="4"></circle>
+</svg>
+<span>Profile</span>
+</a>
+</div>
+<hr/>
+<div class="menu-section">
+<div class="section-title">
+<svg fill="none" height="22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="22">
+<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+</svg>
+<span>Recent Chats</span>
+</div>
+<div class="recent-list">
+<a href="#" style="color: var(--accent-pink);">i want to complain abo...</a>
+<a href="#">What are my ward...</a>
+<a href="#">Give me a brief summa...</a>
+<a href="#">I want to create a new...</a>
+<a href="#">i care about improving...</a>
+</div>
+</div>
+<hr/>
+<div class="menu-section bottom-section">
+<a class="menu-item" href="#">
+<svg fill="none" height="22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="22">
+<path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+</svg>
+<span>Give Feedback</span>
+</a>
+<a class="menu-item" href="#">
+<svg fill="none" height="22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="22">
+<path d="M18.36 6.64a9 9 0 1 1-12.73 0"></path>
+<line x1="12" x2="12" y1="2" y2="12"></line>
+</svg>
+<span>Logout</span>
+</a>
+</div>
+</nav>
+<main class="themes-main">
+<div class="themes-header">
+<h1>Themes</h1>
+<p>Explore the top issue areas people are discussing across the United Kingdom.</p>
+</div>
+<div class="themes-grid">
+<!-- Featured Constituency Card -->
+<div class="featured-card">
+<div class="featured-header">
+<h2>Emergent Issues</h2>
+<p>The most pressing discussions rising in your constituency over the last week.</p>
+</div>
+<div class="featured-content">
+<a class="featured-issue" href="themes/theme-healthcare-wait-times.html" style="text-decoration: none; color: inherit;">
+<div class="issue-top">
+<img alt="Healthcare" class="issue-icon" src="https://picsum.photos/seed/healthcare/100/100"/>
+<div class="issue-details">
+<h3>Healthcare Wait Times</h3>
+<p>Significant increase in complaints regarding GP appointment availability.</p>
+</div>
+</div>
+<div class="issue-metrics">
+<span class="data-numeral">12,450</span>
+<span class="label">discussing</span>
+</div>
+</a>
+<a class="featured-issue" href="themes/theme-business-rates.html" style="text-decoration: none; color: inherit;">
+<div class="issue-top">
+<img alt="Business Rates" class="issue-icon" src="https://picsum.photos/seed/businessrates/100/100"/>
+<div class="issue-details">
+<h3>High Street Business Rates</h3>
+<p>Local shop owners petitioning for rate reductions to prevent closures.</p>
+</div>
+</div>
+<div class="issue-metrics">
+<span class="data-numeral">8,320</span>
+<span class="label">discussing</span>
+</div>
+</a>
+<a class="featured-issue" href="themes/theme-transport.html" style="text-decoration: none; color: inherit;">
+<div class="issue-top">
+<img alt="Transport" class="issue-icon" src="https://picsum.photos/seed/transport/100/100"/>
+<div class="issue-details">
+<h3>Local Transport Delays</h3>
+<p>Bus routes facing frequent cancellations impacting daily commuters.</p>
+</div>
+</div>
+<div class="issue-metrics">
+<span class="data-numeral">5,912</span>
+<span class="label">discussing</span>
+</div>
+</a>
+</div>
+</div>
+<a class="theme-card" href="themes/theme-arts.html" style="text-decoration: none; color: inherit;">
+<div class="theme-card-top">
+<img alt="Arts" class="theme-icon" src="https://picsum.photos/seed/arts/100/100"/>
+<div class="theme-info">
+<h2>Arts, Media and Sport</h2>
+<p>Public voices on local venues, sports funding and media access</p>
+</div>
+</div>
+<div class="theme-stats">
+<span class="discussing">92,219 discussing</span> <span class="motions">· 81 motions</span>
+</div>
+</a>
+<a class="theme-card" href="themes/theme-benefits.html" style="text-decoration: none; color: inherit;">
+<div class="theme-card-top">
+<img alt="Benefits" class="theme-icon" src="https://picsum.photos/seed/benefits/100/100"/>
+<div class="theme-info">
+<h2>Benefits and Jobs</h2>
+<p>What people are saying about work, welfare and living costs</p>
+</div>
+</div>
+<div class="theme-stats">
+<span class="discussing">163,190 discussing</span> <span class="motions">· 223 motions</span>
+</div>
+</a>
+<a class="theme-card" href="themes/theme-business.html" style="text-decoration: none; color: inherit;">
+<div class="theme-card-top">
+<img alt="Business" class="theme-icon" src="https://picsum.photos/seed/business/100/100"/>
+<div class="theme-info">
+<h2>Business and Trade</h2>
+<p>Community views on high streets, local business and fair trade</p>
+</div>
+</div>
+<div class="theme-stats">
+<span class="discussing">68,522 discussing</span> <span class="motions">· 321 motions</span>
+</div>
+</a>
+<a class="theme-card" href="themes/theme-courts.html" style="text-decoration: none; color: inherit;">
+<div class="theme-card-top">
+<img alt="Courts" class="theme-icon" src="https://picsum.photos/seed/courts/100/100"/>
+<div class="theme-info">
+<h2>Courts and Prisons</h2>
+<p>Public calls for justice reform, safer streets and sentencing change</p>
+</div>
+</div>
+<div class="theme-stats">
+<span class="discussing">383,931 discussing</span> <span class="motions">· 195 motions</span>
+</div>
+</a>
+<a class="theme-card" href="themes/theme-education.html" style="text-decoration: none; color: inherit;">
+<div class="theme-card-top">
+<img alt="Education" class="theme-icon" src="https://picsum.photos/seed/education/100/100"/>
+<div class="theme-info">
+<h2>Education</h2>
+<p>What parents and communities want from schools and education policy</p>
+</div>
+</div>
+<div class="theme-stats">
+<span class="discussing">238,908 discussing</span> <span class="motions">· 221 motions</span>
+</div>
+</a>
+<a class="theme-card" href="themes/theme-energy.html" style="text-decoration: none; color: inherit;">
+<div class="theme-card-top">
+<img alt="Energy" class="theme-icon" src="https://picsum.photos/seed/energy/100/100"/>
+<div class="theme-info">
+<h2>Energy</h2>
+<p>Residents speaking out on energy bills, blackouts and green energy</p>
+</div>
+</div>
+<div class="theme-stats">
+<span class="discussing">7,711 discussing</span> <span class="motions">· 60 motions</span>
+</div>
+</a>
+<a class="theme-card" href="themes/theme-environment.html" style="text-decoration: none; color: inherit;">
+<div class="theme-card-top">
+<img alt="Environment" class="theme-icon" src="https://picsum.photos/seed/environment/100/100"/>
+<div class="theme-info">
+<h2>Environment and Food</h2>
+<p>Citizens raising concerns on pollution, food quality and climate</p>
+</div>
+</div>
+<div class="theme-stats">
+<span class="discussing">534,689 discussing</span> <span class="motions">· 637 motions</span>
+</div>
+</a>
+<a class="theme-card" href="themes/theme-government.html" style="text-decoration: none; color: inherit;">
+<div class="theme-card-top">
+<img alt="Government" class="theme-icon" src="https://picsum.photos/seed/government/100/100"/>
+<div class="theme-info">
+<h2>Government Finances</h2>
+<p>Taxpayer voices on public spending, budgets and accountability</p>
+</div>
+</div>
+<div class="theme-stats">
+<span class="discussing">172,644 discussing</span> <span class="motions">· 116 motions</span>
+</div>
+</a>
+<a class="theme-card" href="themes/theme-healthcare.html" style="text-decoration: none; color: inherit;">
+<div class="theme-card-top">
+<img alt="Health Care" class="theme-icon" src="https://picsum.photos/seed/healthcare/100/100"/>
+<div class="theme-info">
+<h2>Health Care</h2>
+<p>What the public demands from the NHS, GPs and mental health services</p>
+</div>
+</div>
+<div class="theme-stats">
+<span class="discussing">1,085,677 discussing</span> <span class="motions">· 1,240 motions</span>
+</div>
+</a>
+<a class="theme-card" href="themes/theme-housing.html" style="text-decoration: none; color: inherit;">
+<div class="theme-card-top">
+<img alt="Housing" class="theme-icon" src="https://picsum.photos/seed/housing/100/100"/>
+<div class="theme-info">
+<h2>Housing and Communities</h2>
+<p>Residents pushing for affordable homes and better planning</p>
+</div>
+</div>
+<div class="theme-stats">
+<span class="discussing">197,612 discussing</span> <span class="motions">· 791 motions</span>
+</div>
+</a>
+<a class="theme-card" href="themes/theme-immigration.html" style="text-decoration: none; color: inherit;">
+<div class="theme-card-top">
+<img alt="Immigration" class="theme-icon" src="https://picsum.photos/seed/immigration/100/100"/>
+<div class="theme-info">
+<h2>Immigration and Policing</h2>
+<p>Community perspectives on safety, borders and local policing</p>
+</div>
+</div>
+<div class="theme-stats">
+<span class="discussing">1,398,999 discussing</span> <span class="motions">· 549 motions</span>
+</div>
+</a>
+<a class="theme-card" href="themes/theme-international.html" style="text-decoration: none; color: inherit;">
+<div class="theme-card-top">
+<img alt="International" class="theme-icon" src="https://picsum.photos/seed/international/100/100"/>
+<div class="theme-info">
+<h2>International Affairs</h2>
+<p>Public opinion on foreign policy, defence and global issues</p>
+</div>
+</div>
+<div class="theme-stats">
+<span class="discussing">211,524 discussing</span> <span class="motions">· 82 motions</span>
+</div>
+</a>
+</div>
 
-    <nav class="sidebar">
-        <div class="logo-container">
-            <svg width="60" height="60" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-                <rect width="120" height="120" rx="28" fill="#e2e8f0" />
-                <path d="M 35 35 H 75 V 50 H 90 V 65 H 105 V 105 H 65 V 90 H 50 V 75 H 35 Z" fill="#E63F7F"/>
-            </svg>
-        </div>
-        
-        <div class="menu-section">
-            <a href="index.html" class="menu-item">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="3" y="3" width="18" height="18" rx="4" ry="4"></rect>
-                    <path d="M9 9v6"></path><path d="M12 7v10"></path><path d="M15 10v4"></path>
-                </svg>
-                <span>New Chat</span>
-            </a>
-            <a href="themes.html" class="menu-item active">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-                    <polyline points="2 12 12 17 22 12"></polyline>
-                    <polyline points="2 17 12 22 22 17"></polyline>
-                </svg>
-                <span>Themes</span>
-            </a>
-            <a href="#" class="menu-item">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <line x1="2" y1="12" x2="22" y2="12"></line>
-                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-                </svg>
-                <span>Map</span>
-            </a>
-        </div>
-        
-        <hr>
-        
-        <div class="menu-section">
-            <a href="#" class="menu-item">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="12" y1="5" x2="12" y2="19"></line>
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                </svg>
-                <span>Create Motion</span>
-            </a>
-            <a href="#" class="menu-item">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
-                    <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
-                </svg>
-                <span>Notifications</span>
-            </a>
-            <a href="#" class="menu-item">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                    <circle cx="12" cy="7" r="4"></circle>
-                </svg>
-                <span>Profile</span>
-            </a>
-        </div>
-        
-        <hr>
-        
-        <div class="menu-section">
-            <div class="section-title">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-                </svg>
-                <span>Recent Chats</span>
-            </div>
-            <div class="recent-list">
-                <a href="#" style="color: var(--accent-pink);">i want to complain abo...</a>
-                <a href="#">What are my ward...</a>
-                <a href="#">Give me a brief summa...</a>
-                <a href="#">I want to create a new...</a>
-                <a href="#">i care about improving...</a>
-            </div>
-        </div>
-        
-        <hr>
-        
-        <div class="menu-section bottom-section">
-            <a href="#" class="menu-item">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
-                </svg>
-                <span>Give Feedback</span>
-            </a>
-            <a href="#" class="menu-item">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M18.36 6.64a9 9 0 1 1-12.73 0"></path>
-                    <line x1="12" y1="2" x2="12" y2="12"></line>
-                </svg>
-                <span>Logout</span>
-            </a>
-        </div>
-    </nav>
-
-    <main class="themes-main">
-        <div class="themes-header">
-            <h1>Themes</h1>
-            <p>Explore the top issue areas people are discussing across the United Kingdom.</p>
-        </div>
-        
-        <div class="themes-grid">
-            <!-- Featured Constituency Card -->
-            <div class="featured-card">
-                <div class="featured-header">
-                    <h2>Emergent Issues</h2>
-                    <p>The most pressing discussions rising in your constituency over the last week.</p>
-                </div>
-                <div class="featured-content">
-                    <a href="themes/theme-healthcare-wait-times.html" class="featured-issue" style="text-decoration: none; color: inherit;">
-                        <div class="issue-top">
-                            <img src="https://picsum.photos/seed/healthcare/100/100" alt="Healthcare" class="issue-icon">
-                            <div class="issue-details">
-                                <h3>Healthcare Wait Times</h3>
-                                <p>Significant increase in complaints regarding GP appointment availability.</p>
-                            </div>
-                        </div>
-                        <div class="issue-metrics">
-                            <span class="data-numeral">12,450</span>
-                            <span class="label">discussing</span>
-                        </div>
-                    </a>
-                    
-                    <a href="themes/theme-business-rates.html" class="featured-issue" style="text-decoration: none; color: inherit;">
-                        <div class="issue-top">
-                            <img src="https://picsum.photos/seed/businessrates/100/100" alt="Business Rates" class="issue-icon">
-                            <div class="issue-details">
-                                <h3>High Street Business Rates</h3>
-                                <p>Local shop owners petitioning for rate reductions to prevent closures.</p>
-                            </div>
-                        </div>
-                        <div class="issue-metrics">
-                            <span class="data-numeral">8,320</span>
-                            <span class="label">discussing</span>
-                        </div>
-                    </a>
-
-                    <a href="themes/theme-transport.html" class="featured-issue" style="text-decoration: none; color: inherit;">
-                        <div class="issue-top">
-                            <img src="https://picsum.photos/seed/transport/100/100" alt="Transport" class="issue-icon">
-                            <div class="issue-details">
-                                <h3>Local Transport Delays</h3>
-                                <p>Bus routes facing frequent cancellations impacting daily commuters.</p>
-                            </div>
-                        </div>
-                        <div class="issue-metrics">
-                            <span class="data-numeral">5,912</span>
-                            <span class="label">discussing</span>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <a href="themes/theme-arts.html" class="theme-card" style="text-decoration: none; color: inherit;">
-                <div class="theme-card-top">
-                    <img src="https://picsum.photos/seed/arts/100/100" alt="Arts" class="theme-icon">
-                    <div class="theme-info">
-                        <h2>Arts, Media and Sport</h2>
-                        <p>Public voices on local venues, sports funding and media access</p>
-                    </div>
-                </div>
-                <div class="theme-stats">
-                    <span class="discussing">92,219 discussing</span> <span class="motions">&middot; 81 motions</span>
-                </div>
-            </a>
-
-            <a href="themes/theme-benefits.html" class="theme-card" style="text-decoration: none; color: inherit;">
-                <div class="theme-card-top">
-                    <img src="https://picsum.photos/seed/benefits/100/100" alt="Benefits" class="theme-icon">
-                    <div class="theme-info">
-                        <h2>Benefits and Jobs</h2>
-                        <p>What people are saying about work, welfare and living costs</p>
-                    </div>
-                </div>
-                <div class="theme-stats">
-                    <span class="discussing">163,190 discussing</span> <span class="motions">&middot; 223 motions</span>
-                </div>
-            </a>
-
-            <a href="themes/theme-business.html" class="theme-card" style="text-decoration: none; color: inherit;">
-                <div class="theme-card-top">
-                    <img src="https://picsum.photos/seed/business/100/100" alt="Business" class="theme-icon">
-                    <div class="theme-info">
-                        <h2>Business and Trade</h2>
-                        <p>Community views on high streets, local business and fair trade</p>
-                    </div>
-                </div>
-                <div class="theme-stats">
-                    <span class="discussing">68,522 discussing</span> <span class="motions">&middot; 321 motions</span>
-                </div>
-            </a>
-
-            <a href="themes/theme-courts.html" class="theme-card" style="text-decoration: none; color: inherit;">
-                <div class="theme-card-top">
-                    <img src="https://picsum.photos/seed/courts/100/100" alt="Courts" class="theme-icon">
-                    <div class="theme-info">
-                        <h2>Courts and Prisons</h2>
-                        <p>Public calls for justice reform, safer streets and sentencing change</p>
-                    </div>
-                </div>
-                <div class="theme-stats">
-                    <span class="discussing">383,931 discussing</span> <span class="motions">&middot; 195 motions</span>
-                </div>
-            </a>
-
-            <a href="themes/theme-education.html" class="theme-card" style="text-decoration: none; color: inherit;">
-                <div class="theme-card-top">
-                    <img src="https://picsum.photos/seed/education/100/100" alt="Education" class="theme-icon">
-                    <div class="theme-info">
-                        <h2>Education</h2>
-                        <p>What parents and communities want from schools and education policy</p>
-                    </div>
-                </div>
-                <div class="theme-stats">
-                    <span class="discussing">238,908 discussing</span> <span class="motions">&middot; 221 motions</span>
-                </div>
-            </a>
-
-            <a href="themes/theme-energy.html" class="theme-card" style="text-decoration: none; color: inherit;">
-                <div class="theme-card-top">
-                    <img src="https://picsum.photos/seed/energy/100/100" alt="Energy" class="theme-icon">
-                    <div class="theme-info">
-                        <h2>Energy</h2>
-                        <p>Residents speaking out on energy bills, blackouts and green energy</p>
-                    </div>
-                </div>
-                <div class="theme-stats">
-                    <span class="discussing">7,711 discussing</span> <span class="motions">&middot; 60 motions</span>
-                </div>
-            </a>
-
-            <a href="themes/theme-environment.html" class="theme-card" style="text-decoration: none; color: inherit;">
-                <div class="theme-card-top">
-                    <img src="https://picsum.photos/seed/environment/100/100" alt="Environment" class="theme-icon">
-                    <div class="theme-info">
-                        <h2>Environment and Food</h2>
-                        <p>Citizens raising concerns on pollution, food quality and climate</p>
-                    </div>
-                </div>
-                <div class="theme-stats">
-                    <span class="discussing">534,689 discussing</span> <span class="motions">&middot; 637 motions</span>
-                </div>
-            </a>
-
-            <a href="themes/theme-government.html" class="theme-card" style="text-decoration: none; color: inherit;">
-                <div class="theme-card-top">
-                    <img src="https://picsum.photos/seed/government/100/100" alt="Government" class="theme-icon">
-                    <div class="theme-info">
-                        <h2>Government Finances</h2>
-                        <p>Taxpayer voices on public spending, budgets and accountability</p>
-                    </div>
-                </div>
-                <div class="theme-stats">
-                    <span class="discussing">172,644 discussing</span> <span class="motions">&middot; 116 motions</span>
-                </div>
-            </a>
-
-            <a href="themes/theme-healthcare.html" class="theme-card" style="text-decoration: none; color: inherit;">
-                <div class="theme-card-top">
-                    <img src="https://picsum.photos/seed/healthcare/100/100" alt="Health Care" class="theme-icon">
-                    <div class="theme-info">
-                        <h2>Health Care</h2>
-                        <p>What the public demands from the NHS, GPs and mental health services</p>
-                    </div>
-                </div>
-                <div class="theme-stats">
-                    <span class="discussing">1,085,677 discussing</span> <span class="motions">&middot; 1,240 motions</span>
-                </div>
-            </a>
-
-            <a href="themes/theme-housing.html" class="theme-card" style="text-decoration: none; color: inherit;">
-                <div class="theme-card-top">
-                    <img src="https://picsum.photos/seed/housing/100/100" alt="Housing" class="theme-icon">
-                    <div class="theme-info">
-                        <h2>Housing and Communities</h2>
-                        <p>Residents pushing for affordable homes and better planning</p>
-                    </div>
-                </div>
-                <div class="theme-stats">
-                    <span class="discussing">197,612 discussing</span> <span class="motions">&middot; 791 motions</span>
-                </div>
-            </a>
-
-            <a href="themes/theme-immigration.html" class="theme-card" style="text-decoration: none; color: inherit;">
-                <div class="theme-card-top">
-                    <img src="https://picsum.photos/seed/immigration/100/100" alt="Immigration" class="theme-icon">
-                    <div class="theme-info">
-                        <h2>Immigration and Policing</h2>
-                        <p>Community perspectives on safety, borders and local policing</p>
-                    </div>
-                </div>
-                <div class="theme-stats">
-                    <span class="discussing">1,398,999 discussing</span> <span class="motions">&middot; 549 motions</span>
-                </div>
-            </a>
-
-            <a href="themes/theme-international.html" class="theme-card" style="text-decoration: none; color: inherit;">
-                <div class="theme-card-top">
-                    <img src="https://picsum.photos/seed/international/100/100" alt="International" class="theme-icon">
-                    <div class="theme-info">
-                        <h2>International Affairs</h2>
-                        <p>Public opinion on foreign policy, defence and global issues</p>
-                    </div>
-                </div>
-                <div class="theme-stats">
-                    <span class="discussing">211,524 discussing</span> <span class="motions">&middot; 82 motions</span>
-                </div>
-            </a>
-        </div>
-        
-        <div class="fab-container">
-            <div class="fab-tooltip">Find themes people are discussing</div>
-            <button class="fab">
-                <svg width="24" height="24" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M 35 35 H 75 V 50 H 90 V 65 H 105 V 105 H 65 V 90 H 50 V 75 H 35 Z" fill="#E63F7F"/>
-                </svg>
-            </button>
-        </div>
-    </main>
-
-</body>
+</main>
+<a class="fab-container" href="ai-bot.html" style="text-decoration: none; color: inherit;">
+<div class="fab-tooltip">Find themes people are discussing</div>
+<button class="fab">
+<svg height="24" viewbox="0 0 120 120" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M 35 35 H 75 V 50 H 90 V 65 H 105 V 105 H 65 V 90 H 50 V 75 H 35 Z" fill="#E63F7F"></path>
+</svg>
+</button>
+</a></body>
 </html>

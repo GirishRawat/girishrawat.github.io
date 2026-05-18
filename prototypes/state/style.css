@@ -260,6 +260,11 @@ hr {
 }
 
 /* FAB Styles */
+.fab-container:hover .fab-tooltip {
+    opacity: 1;
+    transform: translateX(0);
+}
+
 .fab-container {
     position: fixed;
     bottom: 2.5rem;
@@ -271,6 +276,10 @@ hr {
 }
 
 .fab-tooltip {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    transform: translateX(10px);
     background: var(--surface-card);
     border: 1px solid var(--primary-light);
     box-shadow: 0 4px 15px rgba(255, 75, 145, 0.15);
