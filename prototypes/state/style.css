@@ -712,6 +712,10 @@ hr {
     opacity: 0.8;
 }
 
+.motions-section {
+    margin-top: 4rem;
+}
+
 .motions-section-title {
     font-family: var(--font-headline);
     font-size: 1.1rem;
