@@ -179,13 +179,13 @@
 <span class="label">discussing</span>
 </div>
 </a>
-<a class="view-more-card" href="#">
+<a class="view-more-card" href="#" onclick="event.preventDefault(); document.getElementById('all-themes').scrollIntoView({behavior: 'smooth', block: 'start'})">
 <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24">
 <circle cx="12" cy="12" r="10"></circle>
 <polyline points="12 16 16 12 12 8"></polyline>
 <line x1="8" x2="16" y1="12" y2="12"></line>
 </svg>
-    View More
+    View All
 </a>
 </div>
 <button class="carousel-btn right-btn" id="scroll-right-btn" onclick="document.querySelector('.featured-content').scrollBy({left: 320, behavior: 'smooth'})">
@@ -193,7 +193,7 @@
 </button>
 </div>
 </div>
-<a class="theme-card" href="themes/theme-arts.html" style="text-decoration: none; color: inherit;">
+<a class="theme-card" id="all-themes" href="themes/theme-arts.html" style="text-decoration: none; color: inherit; scroll-margin-top: 2rem;">
 <div class="theme-card-top">
 <img alt="Arts" class="theme-icon" src="https://picsum.photos/seed/arts/100/100"/>
 <div class="theme-info">
