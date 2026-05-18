@@ -1131,3 +1131,306 @@ body.modal-open {
     gap: 1rem;
     z-index: 100;
 }
+
+/* =========================================
+   Motion Details Page Styles
+   ========================================= */
+
+.motion-page-layout {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: var(--surface-bright);
+}
+
+.motion-left-pane {
+    flex: 0 0 35%;
+    max-width: 500px;
+    background-color: var(--accent-pink);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.motion-top-nav {
+    display: flex;
+    align-items: center;
+    padding: 1.5rem;
+    gap: 1rem;
+    z-index: 10;
+}
+
+.nav-app-icon {
+    width: 40px;
+    height: 40px;
+    background: white;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-pink);
+    cursor: pointer;
+}
+
+.nav-breadcrumbs {
+    display: flex;
+    background: rgba(255,255,255,0.2);
+    border-radius: 8px;
+    padding: 0.25rem;
+}
+
+.nav-breadcrumb-item {
+    padding: 0.5rem 1rem;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.nav-breadcrumb-item.active {
+    background: white;
+    color: var(--accent-pink);
+}
+
+.map-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.map-container svg {
+    width: 80%;
+    height: 80%;
+    stroke: white;
+    stroke-width: 1.5;
+    fill: none;
+    opacity: 0.9;
+}
+
+.motion-right-pane {
+    flex: 1;
+    overflow-y: auto;
+    padding: 3rem 4rem;
+    display: flex;
+    justify-content: center;
+    background: var(--surface-bright);
+}
+
+.motion-content-container {
+    max-width: 800px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+    background: var(--surface);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.04);
+    border: 1px solid var(--border-subtle);
+}
+
+/* Segmented Control */
+.motion-segmented-control {
+    display: flex;
+    background: var(--surface-container-low);
+    border-radius: 30px;
+    padding: 0.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid var(--border-subtle);
+}
+
+.segmented-btn {
+    flex: 1;
+    text-align: center;
+    padding: 0.75rem;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.segmented-btn.active {
+    background: #333947;
+    color: white;
+}
+
+/* Header & Meta */
+.motion-content-container h1 {
+    font-family: var(--font-headline);
+    font-size: 2.2rem;
+    color: var(--text-main);
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+}
+
+.motion-meta-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.motion-meta-left {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.motion-meta-left .highlight-pink {
+    color: var(--accent-pink);
+    font-weight: 600;
+}
+
+.motion-reactions {
+    display: flex;
+    gap: 0.5rem;
+    background: var(--surface-container-low);
+    padding: 0.25rem;
+    border-radius: 20px;
+    border: 1px solid var(--border-subtle);
+}
+
+.reaction-btn {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.reaction-btn:hover {
+    background: var(--border-subtle);
+}
+
+.motion-summary-text {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--text-main);
+}
+
+/* Minister Profile Card */
+.minister-profile-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 0;
+    border-top: 1px solid var(--border-subtle);
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.minister-profile-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.minister-profile-left img {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.minister-profile-info h4 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: var(--text-main);
+}
+
+.minister-profile-info p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.contact-btn {
+    background: var(--accent-pink);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+/* Bullet Points */
+.motion-bullet-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.motion-bullet-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: #10B981; /* Green */
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+/* Similar Motions */
+.similar-motions-header {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    font-weight: 700;
+    margin-bottom: -1rem;
+}
+
+.similar-motion-card {
+    padding: 1.25rem;
+    background: var(--surface-container-low);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-subtle);
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.similar-motion-card:hover {
+    background: var(--surface);
+    border-color: var(--text-muted);
+}
+
+.similar-motion-card h4 {
+    margin: 0 0 0.75rem 0;
+    color: var(--text-main);
+    font-size: 1.05rem;
+}
+
+@media (max-width: 1024px) {
+    .motion-page-layout {
+        flex-direction: column;
+        overflow-y: auto;
+    }
+    .motion-left-pane {
+        width: 100%;
+        max-width: 100%;
+        height: 300px;
+        flex: none;
+    }
+    .motion-right-pane {
+        padding: 1.5rem;
+        overflow-y: visible;
+    }
+}

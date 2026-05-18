@@ -2,6 +2,9 @@ import json
 import random
 import re
 
+def slugify(text):
+    return re.sub(r'[^a-z0-9]+', '-', text.lower()).strip('-')
+
 themes_data = [
     {
         "id": "healthcare-wait-times",
@@ -606,7 +609,8 @@ for theme in themes_data:
     # Motions list
     motions_html = []
     for m in theme_page['motions']:
-        m_html = f'''<div class="motion-card">
+        slug = slugify(m["title"])
+        m_html = f'''<a class="motion-card" href="motion-{slug}.html" style="text-decoration: none; color: inherit; display: block;">
     <div class="motion-card-content">
         <h4>{m["title"]}</h4>
         <div class="motion-metadata">
@@ -615,7 +619,7 @@ for theme in themes_data:
             <span class="meta-scope">National</span>
         </div>
     </div>
-</div>'''
+</a>'''
         motions_html.append(m_html)
     
     motions_section = (
@@ -660,4 +664,73 @@ for theme in themes_data:
 with open('themes.html', 'w') as f:
     f.write(themes_content)
 
-print("Generated 15 theme pages and updated themes.html")
+# GENERATE MOTION PAGES
+with open(f"{THEMES_DIR}/motion-template.html", "r") as f:
+    motion_template = f.read()
+
+# Gather all motions
+all_motions = []
+for theme in themes_data:
+    all_motions.extend([(theme, m) for m in theme["motions"]])
+    if theme["id"] in EXTRA_MOTIONS:
+        all_motions.extend([(theme, m) for m in EXTRA_MOTIONS[theme["id"]]])
+
+motions_generated = 0
+for theme, m in all_motions:
+    slug = slugify(m["title"])
+    content = motion_template
+    
+    content = content.replace("{{THEME_ID}}", theme["id"])
+    content = content.replace("{{TITLE}}", m["title"])
+    
+    # Generate generic contributor count based on votes
+    try:
+        contributors = f"{int(m['votes']) * 6:,}"
+    except ValueError:
+        contributors = "60,225"
+        
+    content = content.replace("{{CONTRIBUTORS}}", contributors)
+    
+    # Generic summary paragraph
+    summary_text = f"This motion, titled '{m['title']}', has gathered significant attention with {m['votes']} votes and {m['comments']} comments. Supporters argue that this is a critical step forward for the community and urge the government to take immediate action. The proposal aims to address key concerns raised by citizens across the nation."
+    content = content.replace("{{SUMMARY}}", summary_text)
+    
+    content = content.replace("{{MINISTER_NAME}}", theme["minister_name"])
+    content = content.replace("{{MINISTER_ROLE}}", theme["minister_role"])
+    content = content.replace("{{MINISTER_AVATAR}}", theme["minister_avatar"])
+    
+    # Bullet points
+    bullets = f'''
+    <div class="motion-bullet-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg> Strongly supports community growth</div>
+    <div class="motion-bullet-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg> Addresses fundamental economic needs</div>
+    <div class="motion-bullet-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg> Widely backed by local representatives</div>
+    '''
+    content = content.replace("{{BULLET_POINTS}}", bullets)
+    
+    # Similar motions (pick 2 random from same theme)
+    similar = [sm for sm in get_motion_pool(theme) if sm["title"] != m["title"]]
+    random.shuffle(similar)
+    similar = similar[:2]
+    
+    similar_html = []
+    for sm in similar:
+        sm_slug = slugify(sm["title"])
+        sm_html = f'''
+        <a class="similar-motion-card" href="motion-{sm_slug}.html" style="text-decoration: none; display: block; margin-bottom: 1rem;">
+            <h4>{sm["title"]}</h4>
+            <div class="motion-metadata" style="color: var(--text-muted); font-size: 0.9rem; display: flex; gap: 1rem;">
+                <span class="meta-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg> {sm["comments"]}</span>
+                <span class="meta-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg> {sm["votes"]}</span>
+                <span class="meta-scope">National</span>
+            </div>
+        </a>
+        '''
+        similar_html.append(sm_html)
+        
+    content = content.replace("{{SIMILAR_MOTIONS}}", "".join(similar_html))
+    
+    with open(f"{THEMES_DIR}/motion-{slug}.html", "w") as f:
+        f.write(content)
+    motions_generated += 1
+
+print(f"Generated 15 theme pages, {motions_generated} motion pages, and updated themes.html")
