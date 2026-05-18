@@ -1076,3 +1076,48 @@ body.modal-open {
         padding: 1.5rem;
     }
 }
+
+/* Carousel Buttons for Emergent Issues */
+.featured-carousel-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--surface-bright);
+    border: 1px solid var(--border-subtle);
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    z-index: 10;
+    transition: all 0.2s ease;
+}
+
+.carousel-btn:hover {
+    background: var(--surface-card);
+    border-color: var(--primary-light);
+    color: var(--primary);
+    transform: translateY(-50%) scale(1.05);
+}
+
+.carousel-btn.left-btn {
+    left: -22px;
+}
+
+.carousel-btn.right-btn {
+    right: -22px;
+}
+
+@media (max-width: 768px) {
+    .carousel-btn.left-btn { left: -10px; }
+    .carousel-btn.right-btn { right: -10px; }
+}

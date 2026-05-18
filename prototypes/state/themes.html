@@ -109,6 +109,10 @@
 <h2>Emergent Issues</h2>
 <p>The most pressing discussions rising in your constituency over the last week.</p>
 </div>
+<div class="featured-carousel-wrapper" style="position: relative;">
+<button class="carousel-btn left-btn" onclick="document.querySelector('.featured-content').scrollBy({left: -320, behavior: 'smooth'})">
+<svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24"><polyline points="15 18 9 12 15 6"></polyline></svg>
+</button>
 <div class="featured-content">
 <a class="featured-issue" href="themes/theme-healthcare-wait-times.html" style="text-decoration: none; color: inherit;">
 <div class="issue-top">
@@ -176,13 +180,17 @@
 </div>
 </a>
 <a class="view-more-card" href="#">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="12" cy="12" r="10"></circle>
-        <polyline points="12 16 16 12 12 8"></polyline>
-        <line x1="8" y1="12" x2="16" y2="12"></line>
-    </svg>
+<svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24">
+<circle cx="12" cy="12" r="10"></circle>
+<polyline points="12 16 16 12 12 8"></polyline>
+<line x1="8" x2="16" y1="12" y2="12"></line>
+</svg>
     View More
 </a>
+</div>
+<button class="carousel-btn right-btn" onclick="document.querySelector('.featured-content').scrollBy({left: 320, behavior: 'smooth'})">
+<svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</button>
 </div>
 </div>
 <a class="theme-card" href="themes/theme-arts.html" style="text-decoration: none; color: inherit;">
