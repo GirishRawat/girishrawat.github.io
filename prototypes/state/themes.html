@@ -110,10 +110,10 @@
 <p>The most pressing discussions rising in your constituency over the last week.</p>
 </div>
 <div class="featured-carousel-wrapper" style="position: relative;">
-<button class="carousel-btn left-btn" onclick="document.querySelector('.featured-content').scrollBy({left: -320, behavior: 'smooth'})">
+<button class="carousel-btn left-btn" id="scroll-left-btn" onclick="document.querySelector('.featured-content').scrollBy({left: -320, behavior: 'smooth'})" style="opacity: 0; pointer-events: none;">
 <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24"><polyline points="15 18 9 12 15 6"></polyline></svg>
 </button>
-<div class="featured-content">
+<div class="featured-content" id="featured-scroll-content">
 <a class="featured-issue" href="themes/theme-healthcare-wait-times.html" style="text-decoration: none; color: inherit;">
 <div class="issue-top">
 <img alt="Healthcare" class="issue-icon" src="https://picsum.photos/seed/healthcare/100/100"/>
@@ -188,7 +188,7 @@
     View More
 </a>
 </div>
-<button class="carousel-btn right-btn" onclick="document.querySelector('.featured-content').scrollBy({left: 320, behavior: 'smooth'})">
+<button class="carousel-btn right-btn" id="scroll-right-btn" onclick="document.querySelector('.featured-content').scrollBy({left: 320, behavior: 'smooth'})">
 <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24"><polyline points="9 18 15 12 9 6"></polyline></svg>
 </button>
 </div>
@@ -346,5 +346,41 @@
 <path d="M 35 35 H 75 V 50 H 90 V 65 H 105 V 105 H 65 V 90 H 50 V 75 H 35 Z" fill="#E63F7F"></path>
 </svg>
 </button>
-</a></body>
+</a>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const scrollContent = document.getElementById("featured-scroll-content");
+        const leftBtn = document.getElementById("scroll-left-btn");
+        const rightBtn = document.getElementById("scroll-right-btn");
+        
+        if (scrollContent && leftBtn && rightBtn) {
+            function updateButtons() {
+                // Left button
+                if (scrollContent.scrollLeft <= 0) {
+                    leftBtn.style.opacity = "0";
+                    leftBtn.style.pointerEvents = "none";
+                } else {
+                    leftBtn.style.opacity = "1";
+                    leftBtn.style.pointerEvents = "auto";
+                }
+                
+                // Right button
+                if (scrollContent.scrollLeft + scrollContent.clientWidth >= scrollContent.scrollWidth - 1) {
+                    rightBtn.style.opacity = "0";
+                    rightBtn.style.pointerEvents = "none";
+                } else {
+                    rightBtn.style.opacity = "1";
+                    rightBtn.style.pointerEvents = "auto";
+                }
+            }
+            
+            scrollContent.addEventListener("scroll", updateButtons);
+            
+            // Check on load and resize
+            updateButtons();
+            window.addEventListener("resize", updateButtons);
+        }
+    });
+</script>
+</body>
 </html>
