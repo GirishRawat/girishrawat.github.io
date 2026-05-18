@@ -157,6 +157,11 @@ hr {
     margin-top: auto;
 }
 
+@keyframes slideFadeIn {
+    0% { opacity: 0; transform: translateY(15px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
 /* Themes Main Content Styles */
 .themes-main {
     flex: 1;
@@ -164,6 +169,7 @@ hr {
     height: 100vh;
     overflow-y: auto;
     background-color: var(--surface-bright);
+    animation: slideFadeIn 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
 
 .themes-header h1 {
