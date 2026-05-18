@@ -266,9 +266,13 @@ hr {
 }
 
 .fab-container {
+    position: fixed;
+    bottom: 2.5rem;
+    right: 2.5rem;
     display: flex;
     align-items: center;
     gap: 1rem;
+    z-index: 100;
 }
 
 .fab-tooltip {
@@ -1126,28 +1130,4 @@ body.modal-open {
     align-items: center;
     gap: 1rem;
     z-index: 100;
-}
-
-.fab-compose {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    background: var(--accent-pink);
-    color: white;
-    padding: 0 1.5rem;
-    height: 60px;
-    border-radius: 30px;
-    font-family: var(--font-label);
-    font-weight: 700;
-    font-size: 0.95rem;
-    text-decoration: none;
-    box-shadow: 0 4px 20px rgba(230, 63, 127, 0.3);
-    transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.fab-compose:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 25px rgba(230, 63, 127, 0.4);
-    color: white;
 }
