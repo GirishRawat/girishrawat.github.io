@@ -315,7 +315,7 @@ hr {
     grid-column: 1 / -1;
     background: var(--surface-card);
     border: 1px solid var(--border-subtle);
-    border-top: 4px solid var(--primary);
+    border-top: 2px solid var(--primary);
     border-radius: var(--radius-lg);
     padding: 2rem;
     display: flex;
@@ -326,10 +326,17 @@ hr {
 
 .featured-header {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
     border-bottom: 1px solid var(--border-subtle);
     padding-bottom: 1rem;
+}
+
+.featured-header p {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    color: var(--text-muted);
 }
 
 .featured-header h2 {
@@ -378,14 +385,28 @@ hr {
     background: var(--surface);
     border-radius: var(--radius-md);
     border: 1px solid var(--border-subtle);
+    cursor: pointer;
+    transition: background-color 0.2s;
 }
 
-.issue-rank {
-    font-family: var(--font-headline);
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--primary);
-    line-height: 1;
+.featured-issue:hover {
+    background-color: var(--surface-container-low);
+}
+
+.issue-top {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.issue-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: var(--radius-sm);
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 1px solid var(--border-subtle);
 }
 
 .issue-details h3 {
