@@ -550,6 +550,32 @@ def build_ai_summary_block(theme):
 <div class="ai-summary-modal-body">
 {long_html}
 </div>
+
+<div class="ai-sentiment-section">
+    <h4>Sentiment Breakdown</h4>
+    <div class="sentiment-item">
+        <span class="sentiment-label">Frustrated</span>
+        <div class="sentiment-bar-container">
+            <div class="sentiment-bar frustrated" style="width: 58%;"></div>
+        </div>
+        <span class="sentiment-value">58%</span>
+    </div>
+    <div class="sentiment-item">
+        <span class="sentiment-label">Concerned</span>
+        <div class="sentiment-bar-container">
+            <div class="sentiment-bar concerned" style="width: 28%;"></div>
+        </div>
+        <span class="sentiment-value">28%</span>
+    </div>
+    <div class="sentiment-item">
+        <span class="sentiment-label">Hopeful</span>
+        <div class="sentiment-bar-container">
+            <div class="sentiment-bar hopeful" style="style-width: 14%; width: 14%;"></div>
+        </div>
+        <span class="sentiment-value">14%</span>
+    </div>
+</div>
+
 <div class="ai-summary-modal-sources">
 <h4>Source motions</h4>
 <p class="ai-summary-modal-source-note">These summaries were scraped and synthesised from the following motions. Always read the original motion text to verify claims.</p>
