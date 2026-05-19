@@ -808,13 +808,13 @@ for theme in themes_data:
     with open(f'{THEMES_DIR}/theme-{theme["id"]}.html', 'w') as f:
         f.write(content)
 
-# Now update themes.html to point to these new pages
-with open('themes.html', 'r') as f:
+# Now update index.html to point to these new pages
+with open('index.html', 'r') as f:
     themes_content = f.read()
 
 for theme in themes_data:
     # We replace the generic link with the specific link for this card.
-    # The title inside themes.html matches theme["title"]
+    # The title inside index.html matches theme["title"]
     # Regex to find <a href="theme-details.html"...> ... <h2>Title</h2> ... </a>
     # We will just split by '<a href="theme-details.html"' and check if the title is inside
     
@@ -827,7 +827,7 @@ for theme in themes_data:
     replacement_feat = r'<a href="theme-' + theme["id"] + r'.html"\1'
     themes_content = re.sub(pattern_feat, replacement_feat, themes_content)
 
-with open('themes.html', 'w') as f:
+with open('index.html', 'w') as f:
     f.write(themes_content)
 
 # GENERATE MOTION PAGES
@@ -899,4 +899,4 @@ for theme, m in all_motions:
         f.write(content)
     motions_generated += 1
 
-print(f"Generated 15 theme pages, {motions_generated} motion pages, and updated themes.html")
+print(f"Generated 15 theme pages, {motions_generated} motion pages, and updated index.html")
