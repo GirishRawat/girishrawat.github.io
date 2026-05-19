@@ -615,7 +615,7 @@ def build_compose_modal_html(theme):
         <!-- Compose response to constituents -->
         <div class="compose-modal-section compose-input-section">
             <h3>Compose response to constituents</h3>
-            <textarea class="compose-textarea" placeholder="Write your response to constituents here...">{data["draft"]}</textarea>
+            <textarea class="compose-textarea" placeholder="I hear your frustration. Long waits to see a GP are unacceptable, and I want you to know I'm taking this seriously. I've written to our local NHS trust requesting an urgent meeting, and I'll be raising this issue in Parliament next week. I'll keep you updated on what I hear back.">{data["draft"]}</textarea>
         </div>
 
         <!-- Footer actions -->
