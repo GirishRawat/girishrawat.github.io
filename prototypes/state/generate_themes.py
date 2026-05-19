@@ -581,7 +581,7 @@ def build_compose_modal_html(theme):
         raw_val = 92
         
     constituents_count = f"{raw_val * 31:,}"
-    tags_html = '\\n'.join([f'                <span class="tag tag-outline-pink">{tag}</span>' for tag in theme['tags']])
+    tags_html = '\n'.join([f'                <span class="tag tag-outline-pink">{tag}</span>' for tag in theme['tags']])
     summaries = AI_SUMMARIES[theme["id"]]
     summary_text = summaries["short"]
     
