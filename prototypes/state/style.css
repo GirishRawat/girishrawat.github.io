@@ -1999,3 +1999,115 @@ body.modal-open {
 .compose-footer-buttons .btn-primary:active {
     transform: translateY(0);
 }
+
+/* Official Response Section styling */
+.official-response-section {
+    margin-top: 2.5rem;
+    animation: slideFadeIn 0.3s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.official-response-card {
+    background: rgba(230, 63, 127, 0.02);
+    border: 1px solid rgba(230, 63, 127, 0.1);
+    border-left: 4px solid var(--accent-pink);
+    padding: 1.5rem;
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    box-shadow: 0 4px 15px rgba(230, 63, 127, 0.01);
+}
+
+.official-response-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(230, 63, 127, 0.06);
+    padding-bottom: 0.75rem;
+}
+
+.minister-info-mini {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.minister-avatar-mini {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid var(--border-subtle);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.minister-details-mini h4 {
+    margin: 0;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.minister-details-mini p {
+    margin: 0;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.response-status {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.status-badge {
+    font-size: 0.7rem;
+    background: var(--accent-pink);
+    color: white;
+    padding: 0.25rem 0.6rem;
+    border-radius: var(--radius-full);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.edit-response-btn {
+    background: transparent;
+    border: 1px solid rgba(230, 63, 127, 0.2);
+    color: var(--accent-pink);
+    padding: 0.35rem 0.75rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    transition: all 0.2s;
+}
+
+.edit-response-btn:hover {
+    background: rgba(230, 63, 127, 0.04);
+    border-color: var(--accent-pink);
+}
+
+.official-response-text {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-main);
+    white-space: pre-wrap;
+}
+
+.compose-reply-btn.has-published {
+    background: transparent;
+    border: 2px solid var(--accent-pink);
+    color: var(--accent-pink);
+    box-shadow: none;
+}
+
+.compose-reply-btn.has-published:hover {
+    background: rgba(230, 63, 127, 0.04);
+    color: var(--accent-pink);
+}
+

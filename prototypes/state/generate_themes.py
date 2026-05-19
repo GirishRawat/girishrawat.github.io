@@ -763,6 +763,12 @@ for theme in themes_data:
     # Compose modal
     content = content.replace("<!-- COMPOSE_MODAL_BLOCK -->", build_compose_modal_html(theme_page))
 
+    # Replace official response placeholders in client-side script
+    content = content.replace("<!-- THEME_ID -->", theme["id"])
+    content = content.replace("<!-- MINISTER_NAME -->", theme["minister_name"])
+    content = content.replace("<!-- MINISTER_ROLE -->", theme["minister_role"])
+    content = content.replace("<!-- MINISTER_AVATAR -->", theme["minister_avatar"])
+
     # Bar chart
     content = re.sub(r'<div class="mini-bar-chart">.*?</div>\n                </div>', f'<div class="mini-bar-chart">\n{generate_bar_chart()}\n</div>\n                </div>', content, flags=re.DOTALL)
     
