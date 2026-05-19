@@ -571,6 +571,10 @@ def build_ai_summary_block(theme):
         </div>
         <span class="sentiment-value">14%</span>
     </div>
+    
+    <div class="ai-modal-tags">
+        {"\n".join(f'        <span class="tag tag-outline-pink">{tag}</span>' for tag in theme["tags"])}
+    </div>
 </div>
 
 <div class="ai-summary-modal-body">

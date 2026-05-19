@@ -1060,6 +1060,28 @@ hr {
     color: var(--text-main);
 }
 
+.ai-modal-tags {
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
+
+.ai-modal-tags .tag {
+    cursor: default;
+    border-radius: var(--radius-full);
+    padding: 0.4rem 1.1rem;
+    font-weight: 600;
+    font-size: 0.85rem;
+    border: 1px solid var(--primary-light);
+    transition: all 0.2s ease;
+}
+
+.ai-modal-tags .tag:hover {
+    background: var(--primary-light);
+    transform: translateY(-1px);
+}
+
 /* =========================================
    Sources & Motions
    ========================================= */
