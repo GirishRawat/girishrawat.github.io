@@ -602,13 +602,6 @@ def build_compose_modal_html(theme):
                     {constituents_count} constituents · rising fast
                 </p>
             </div>
-            <div class="compose-modal-badges">
-                <span class="badge badge-momentum">
-                    <svg fill="none" height="12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" width="12" style="margin-right: 0.2rem;"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
-                    High momentum
-                </span>
-                <span class="badge badge-status">Awaiting response</span>
-            </div>
         </div>
 
         <!-- AI Summary of what citizens are saying -->
@@ -616,9 +609,6 @@ def build_compose_modal_html(theme):
             <h3>AI Summary of what citizens are saying</h3>
             <div class="compose-summary-box">
                 <p>{summary_text}</p>
-            </div>
-            <div class="compose-summary-tags">
-{tags_html}
             </div>
         </div>
 
@@ -631,7 +621,7 @@ def build_compose_modal_html(theme):
         <!-- Footer actions -->
         <div class="compose-modal-footer">
             <span class="compose-reaches-info">
-                Reaches {constituents_count} constituents · public on State
+                Reaches {constituents_count} constituents
             </span>
             <div class="compose-footer-buttons">
                 <button type="button" class="btn-secondary" id="compose-save-draft">Save draft</button>
