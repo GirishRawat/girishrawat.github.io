@@ -167,48 +167,291 @@ Compose reply to constituents
 <div class="metric-trend-row">
 <span class="metric-value trend-positive">+25%</span>
 <div class="mini-bar-chart">
-<div class="bar" style="height: 66%"></div>
-<div class="bar" style="height: 71%"></div>
-<div class="bar" style="height: 71%"></div>
-<div class="bar" style="height: 48%"></div>
-<div class="bar" style="height: 96%"></div>
 <div class="bar" style="height: 40%"></div>
-<div class="bar" style="height: 76%"></div>
-<div class="bar" style="height: 45%"></div>
-<div class="bar" style="height: 99%"></div>
+<div class="bar" style="height: 60%"></div>
+<div class="bar" style="height: 30%"></div>
+<div class="bar" style="height: 50%"></div>
+<div class="bar" style="height: 80%"></div>
+<div class="bar" style="height: 90%"></div>
+<div class="bar" style="height: 60%"></div>
+<div class="bar" style="height: 70%"></div>
+<div class="bar" style="height: 80%"></div>
+<div class="bar" style="height: 50%"></div>
+<div class="bar" style="height: 90%"></div>
+<div class="bar" style="height: 100%"></div>
+<div class="bar" style="height: 70%"></div>
 <div class="bar" style="height: 85%"></div>
-<div class="bar" style="height: 44%"></div>
-<div class="bar" style="height: 96%"></div>
-<div class="bar" style="height: 71%"></div>
-<div class="bar" style="height: 36%"></div>
-<div class="bar" style="height: 49%"></div>
-<div class="bar" style="height: 76%"></div>
-<div class="bar" style="height: 87%"></div>
-<div class="bar" style="height: 63%"></div>
-<div class="bar" style="height: 92%"></div>
-<div class="bar" style="height: 81%"></div>
+<div class="bar" style="height: 60%"></div>
+<div class="bar" style="height: 90%"></div>
+<div class="bar" style="height: 40%"></div>
+<div class="bar" style="height: 70%"></div>
+<div class="bar" style="height: 60%"></div>
+<div class="bar" style="height: 80%"></div>
 </div>
-                </div>
-            `;
-        }
+</div>
+</div>
+</div>
+</div>
 
-        // Set button outline style and text
-        if (composeOpenBtn) {
-            composeOpenBtn.classList.add('has-published');
-            var textSpan = composeOpenBtn.querySelector('span') || composeOpenBtn;
-            textSpan.textContent = 'Edit response';
+<div class="ai-summary-section">
+<div class="ai-summary-header">
+<svg height="18" viewBox="0 0 120 120" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M 35 35 H 75 V 50 H 90 V 65 H 105 V 105 H 65 V 90 H 50 V 75 H 35 Z" fill="#E63F7F"></path></svg>
+<h3>AI Summary</h3>
+</div>
+<p class="ai-summary-text">The NHS workforce and service accessibility are major points of concern. Residents are actively campaigning for a fair pay settlement for junior doctors and nurses, urgent reforms to the NHS dental contract, and guaranteed mental health treatment within a 4-week window.</p>
+<div class="ai-summary-actions">
+<button type="button" class="read-more-btn" id="ai-summary-read-more">Read more</button>
+</div>
+<div class="ai-summary-disclaimer">
+<svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="14"><circle cx="12" cy="12" r="10"></circle><line x1="12" x2="12" y1="8" y2="12"></line><line x1="12" x2="12.01" y1="16" y2="16"></line></svg>
+<span>This summary was created using a Large Language Model (LLM). Always be safe and proofread the linked motions, as LLMs can sometimes be inaccurate.</span>
+</div>
+</div>
+
+<div id="ai-summary-modal" class="ai-summary-modal" aria-hidden="true" role="dialog" aria-labelledby="ai-summary-modal-title">
+<div class="ai-summary-modal-backdrop"></div>
+<div class="ai-summary-modal-dialog">
+<button type="button" class="ai-summary-modal-close" id="ai-summary-modal-close" aria-label="Close">
+<svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20"><line x1="18" x2="6" y1="6" y2="18"></line><line x1="6" x2="18" y1="6" y2="18"></line></svg>
+</button>
+<h2 class="ai-summary-modal-title" id="ai-summary-modal-title">AI Summary</h2>
+<p class="ai-summary-modal-subtitle">Full analysis for Health Care</p>
+
+<div class="ai-sentiment-section">
+    <h4>Sentiment Breakdown</h4>
+    <div class="sentiment-item">
+        <span class="sentiment-label">Frustrated</span>
+        <div class="sentiment-bar-container">
+            <div class="sentiment-bar frustrated" style="width: 58%;"></div>
+        </div>
+        <span class="sentiment-value">58%</span>
+    </div>
+    <div class="sentiment-item">
+        <span class="sentiment-label">Concerned</span>
+        <div class="sentiment-bar-container">
+            <div class="sentiment-bar concerned" style="width: 28%;"></div>
+        </div>
+        <span class="sentiment-value">28%</span>
+    </div>
+    <div class="sentiment-item">
+        <span class="sentiment-label">Hopeful</span>
+        <div class="sentiment-bar-container">
+            <div class="sentiment-bar hopeful" style="style-width: 14%; width: 14%;"></div>
+        </div>
+        <span class="sentiment-value">14%</span>
+    </div>
+    
+    <div class="ai-modal-tags">
+                <span class="tag tag-outline-pink">NHS Dentistry</span>
+        <span class="tag tag-outline-pink">Mental Health</span>
+        <span class="tag tag-outline-pink">Staff Pay</span>
+    </div>
+</div>
+
+<div class="ai-summary-modal-body">
+<p>Healthcare submissions paint a system under strain across workforce, dentistry, and mental health. Junior doctor and nurse pay settlements are tied to retention and safety: residents argue that understaffed wards and burned-out clinicians directly affect care quality in local hospitals they rely on.</p><p>Dental reform motions highlight a postcode lottery where NHS dentists are increasingly unavailable and private fees are unaffordable. Families describe children and pensioners going without routine care until emergencies arise, and they want contract changes that make NHS dentistry viable for practices again.</p><p>A four-week guarantee for mental health treatment addresses long waits that residents say exacerbate crises. Supporters want maximum waiting times enshrined with referral tracking published locally, so accountability is visible rather than buried in national statistics that mask regional shortfalls.</p>
+</div>
+
+<div class="ai-summary-modal-sources">
+<h4>Source motions</h4>
+<p class="ai-summary-modal-source-note">These summaries were scraped and synthesised from the following motions. Always read the original motion text to verify claims.</p>
+<ul class="ai-summary-modal-motions">
+            <li><a href="#" class="modal-motion-link">Improve palliative care access in community settings</a></li>
+            <li><a href="#" class="modal-motion-link">Cap NHS prescription charges for chronic conditions</a></li>
+            <li><a href="#" class="modal-motion-link">Expand screening programmes for common cancers</a></li>
+            <li><a href="#" class="modal-motion-link">Reform the NHS dental contract to stop the exodus of dentists</a></li>
+            <li><a href="#" class="modal-motion-link">Deliver a fair pay settlement for junior doctors and nurses</a></li>
+            <li><a href="#" class="modal-motion-link">Fund ambulance services to meet eight-minute response targets</a></li>
+            <li><a href="#" class="modal-motion-link">Guarantee mental health treatment within 4 weeks</a></li>
+</ul>
+</div>
+<div class="ai-summary-modal-disclaimer">
+<svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="14"><circle cx="12" cy="12" r="10"></circle><line x1="12" x2="12" y1="8" y2="12"></line><line x1="12" x2="12.01" y1="16" y2="16"></line></svg>
+<span>This summary was created using a Large Language Model (LLM). Always be safe and proofread the linked motions, as LLMs can sometimes be inaccurate.</span>
+</div>
+</div>
+</div>
+<div class="motions-section">
+<h3 class="motions-section-title">Top motions</h3>
+<div class="motion-list">
+<a class="motion-card" href="motion-improve-palliative-care-access-in-community-settings.html" style="text-decoration: none; color: inherit; display: block;">
+    <div class="motion-card-content">
+        <h4>Improve palliative care access in community settings</h4>
+        <div class="motion-metadata">
+            <span class="meta-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg> 145</span>
+            <span class="meta-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg> 1100</span>
+            <span class="meta-scope">National</span>
+        </div>
+    </div>
+</a><a class="motion-card" href="motion-cap-nhs-prescription-charges-for-chronic-conditions.html" style="text-decoration: none; color: inherit; display: block;">
+    <div class="motion-card-content">
+        <h4>Cap NHS prescription charges for chronic conditions</h4>
+        <div class="motion-metadata">
+            <span class="meta-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg> 198</span>
+            <span class="meta-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg> 1500</span>
+            <span class="meta-scope">National</span>
+        </div>
+    </div>
+</a><a class="motion-card" href="motion-expand-screening-programmes-for-common-cancers.html" style="text-decoration: none; color: inherit; display: block;">
+    <div class="motion-card-content">
+        <h4>Expand screening programmes for common cancers</h4>
+        <div class="motion-metadata">
+            <span class="meta-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg> 423</span>
+            <span class="meta-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg> 3400</span>
+            <span class="meta-scope">National</span>
+        </div>
+    </div>
+</a><a class="motion-card" href="motion-reform-the-nhs-dental-contract-to-stop-the-exodus-of-dentists.html" style="text-decoration: none; color: inherit; display: block;">
+    <div class="motion-card-content">
+        <h4>Reform the NHS dental contract to stop the exodus of dentists</h4>
+        <div class="motion-metadata">
+            <span class="meta-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg> 1800</span>
+            <span class="meta-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg> 15000</span>
+            <span class="meta-scope">National</span>
+        </div>
+    </div>
+</a><a class="motion-card" href="motion-deliver-a-fair-pay-settlement-for-junior-doctors-and-nurses.html" style="text-decoration: none; color: inherit; display: block;">
+    <div class="motion-card-content">
+        <h4>Deliver a fair pay settlement for junior doctors and nurses</h4>
+        <div class="motion-metadata">
+            <span class="meta-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg> 3100</span>
+            <span class="meta-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg> 24000</span>
+            <span class="meta-scope">National</span>
+        </div>
+    </div>
+</a><a class="motion-card" href="motion-fund-ambulance-services-to-meet-eight-minute-response-targets.html" style="text-decoration: none; color: inherit; display: block;">
+    <div class="motion-card-content">
+        <h4>Fund ambulance services to meet eight-minute response targets</h4>
+        <div class="motion-metadata">
+            <span class="meta-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg> 567</span>
+            <span class="meta-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg> 4500</span>
+            <span class="meta-scope">National</span>
+        </div>
+    </div>
+</a><a class="motion-card" href="motion-guarantee-mental-health-treatment-within-4-weeks.html" style="text-decoration: none; color: inherit; display: block;">
+    <div class="motion-card-content">
+        <h4>Guarantee mental health treatment within 4 weeks</h4>
+        <div class="motion-metadata">
+            <span class="meta-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg> 1400</span>
+            <span class="meta-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg> 11000</span>
+            <span class="meta-scope">National</span>
+        </div>
+    </div>
+</a>
+</div>
+</div>
+</main>
+<a class="fab-container" href="../index.html" style="text-decoration: none; color: inherit;">
+<div class="fab-tooltip">See what people care about<br/>in Arts, Media and Sport</div>
+<button class="fab">
+<svg height="24" viewbox="0 0 120 120" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M 35 35 H 75 V 50 H 90 V 65 H 105 V 105 H 65 V 90 H 50 V 75 H 35 Z" fill="#E63F7F"></path>
+</svg>
+</button>
+</a>
+
+<div id="compose-modal" class="compose-modal" aria-hidden="true" role="dialog" aria-labelledby="compose-modal-title">
+    <div class="compose-modal-backdrop"></div>
+    <div class="compose-modal-dialog">
+        <button type="button" class="compose-modal-close" id="compose-modal-close" aria-label="Close">
+            <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20"><line x1="18" x2="6" y1="6" y2="18"></line><line x1="6" x2="18" y1="6" y2="18"></line></svg>
+        </button>
+        
+        <!-- Header -->
+        <div class="compose-modal-header">
+            <div>
+                <h2 class="compose-modal-title" id="compose-modal-title">NHS dentistry and mental health access</h2>
+                <p class="compose-modal-stats">
+                    <svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="14" style="margin-right: 0.25rem; opacity: 0.7;"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                    33,655,987 constituents · rising fast
+                </p>
+            </div>
+        </div>
+
+        <!-- AI Summary of what citizens are saying -->
+        <div class="compose-modal-section">
+            <h3>AI Summary of what citizens are saying</h3>
+            <div class="compose-summary-box">
+                <p>The NHS workforce and service accessibility are major points of concern. Residents are actively campaigning for a fair pay settlement for junior doctors and nurses, urgent reforms to the NHS dental contract, and guaranteed mental health treatment within a 4-week window.</p>
+            </div>
+        </div>
+
+        <!-- Compose response to constituents -->
+        <div class="compose-modal-section compose-input-section">
+            <h3>Compose response to constituents</h3>
+            <textarea class="compose-textarea" placeholder="Write your response to constituents here...">Access to dental and mental healthcare is currently broken. I have initiated a debate on GP and NHS dentistry deserts, demanding funding to recruit dentists to our ward. I will also continue to lobby for ring-fenced mental health funding to cut waiting lists.</textarea>
+        </div>
+
+        <!-- Footer actions -->
+        <div class="compose-modal-footer">
+            <span class="compose-reaches-info">
+                Reaches 33,655,987 constituents
+            </span>
+            <div class="compose-footer-buttons">
+                <button type="button" class="btn-secondary" id="compose-save-draft">Save draft</button>
+                <button type="button" class="btn-primary compose-publish-btn" id="compose-publish">Publish response</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+(function () {
+    // AI Summary Modal
+    var aiModal = document.getElementById('ai-summary-modal');
+    var aiOpenBtn = document.getElementById('ai-summary-read-more');
+    var aiCloseBtn = document.getElementById('ai-summary-modal-close');
+    var aiBackdrop = document.querySelector('.ai-summary-modal-backdrop');
+
+    function openAiModal() {
+        if (aiModal) {
+            aiModal.classList.add('is-open');
+            aiModal.setAttribute('aria-hidden', 'false');
+            document.body.classList.add('modal-open');
         }
     }
 
-    // Load initial state from LocalStorage
-    var savedResponse = localStorage.getItem('official_response_' + themeId);
-    if (savedResponse) {
-        updateOfficialResponse(savedResponse);
-        if (textarea) {
-            textarea.value = savedResponse;
+    function closeAiModal() {
+        if (aiModal) {
+            aiModal.classList.remove('is-open');
+            aiModal.setAttribute('aria-hidden', 'true');
+            document.body.classList.remove('modal-open');
         }
     }
 
+    if (aiOpenBtn) aiOpenBtn.addEventListener('click', openAiModal);
+    if (aiCloseBtn) aiCloseBtn.addEventListener('click', closeAiModal);
+    if (aiBackdrop) aiBackdrop.addEventListener('click', closeAiModal);
+
+    // Compose Modal
+    var composeModal = document.getElementById('compose-modal');
+    var composeOpenBtn = document.querySelector('.compose-reply-btn');
+    var composeCloseBtn = document.getElementById('compose-modal-close');
+    var composeBackdrop = document.querySelector('.compose-modal-backdrop');
+    var composeSaveBtn = document.getElementById('compose-save-draft');
+    var composePublishBtn = document.getElementById('compose-publish');
+
+    function openComposeModal() {
+        if (composeModal) {
+            composeModal.classList.add('is-open');
+            composeModal.setAttribute('aria-hidden', 'false');
+            document.body.classList.add('modal-open');
+        }
+    }
+
+    function closeComposeModal() {
+        if (composeModal) {
+            composeModal.classList.remove('is-open');
+            composeModal.setAttribute('aria-hidden', 'true');
+            document.body.classList.remove('modal-open');
+        }
+    }
+
+    if (composeOpenBtn) composeOpenBtn.addEventListener('click', openComposeModal);
+    if (composeCloseBtn) composeCloseBtn.addEventListener('click', closeComposeModal);
+    if (composeBackdrop) composeBackdrop.addEventListener('click', closeComposeModal);
+    
     if (composeSaveBtn) {
         composeSaveBtn.addEventListener('click', function() {
             alert('Draft saved successfully!');
@@ -218,9 +461,6 @@ Compose reply to constituents
     
     if (composePublishBtn) {
         composePublishBtn.addEventListener('click', function() {
-            var responseText = textarea ? textarea.value : '';
-            localStorage.setItem('official_response_' + themeId, responseText);
-            updateOfficialResponse(responseText);
             alert('Your response has been published successfully and sent to constituents!');
             closeComposeModal();
         });

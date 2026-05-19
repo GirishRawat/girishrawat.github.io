@@ -198,7 +198,6 @@ Compose reply to constituents
 </div>
 
 <!-- AI_SUMMARY_BLOCK -->
-<div id="official-response-container"></div>
 <div class="motions-section">
 <h3 class="motions-section-title">Top motions</h3>
 <div class="motion-list">
@@ -248,11 +247,6 @@ Compose reply to constituents
 
 <script>
 (function () {
-    var themeId = "<!-- THEME_ID -->";
-    var ministerName = "<!-- MINISTER_NAME -->";
-    var ministerRole = "<!-- MINISTER_ROLE -->";
-    var ministerAvatar = "<!-- MINISTER_AVATAR -->";
-
     // AI Summary Modal
     var aiModal = document.getElementById('ai-summary-modal');
     var aiOpenBtn = document.getElementById('ai-summary-read-more');
@@ -286,8 +280,6 @@ Compose reply to constituents
     var composeBackdrop = document.querySelector('.compose-modal-backdrop');
     var composeSaveBtn = document.getElementById('compose-save-draft');
     var composePublishBtn = document.getElementById('compose-publish');
-    var textarea = document.querySelector('.compose-textarea');
-    var officialResponseContainer = document.getElementById('official-response-container');
 
     function openComposeModal() {
         if (composeModal) {
@@ -309,61 +301,6 @@ Compose reply to constituents
     if (composeCloseBtn) composeCloseBtn.addEventListener('click', closeComposeModal);
     if (composeBackdrop) composeBackdrop.addEventListener('click', closeComposeModal);
     
-    // Function to handle showing/updating official response and outline button state
-    function updateOfficialResponse(messageText) {
-        if (!messageText || messageText.trim() === '') {
-            if (officialResponseContainer) {
-                officialResponseContainer.innerHTML = '';
-            }
-            if (composeOpenBtn) {
-                composeOpenBtn.classList.remove('has-published');
-                var textSpan = composeOpenBtn.querySelector('span') || composeOpenBtn;
-                textSpan.textContent = 'Compose reply to constituents';
-            }
-            return;
-        }
-
-        // Set response HTML
-        if (officialResponseContainer) {
-            officialResponseContainer.innerHTML = `
-                <div class="official-response-section" style="margin-top: 1.5rem; margin-bottom: 2rem;">
-                    <div class="official-response-header" style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem;">
-                        <h3 style="font-family: var(--font-body); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin: 0;">Official Response from Government</h3>
-                        <span class="response-status-badge" style="background: #E6F4EA; color: #1E8E3E; font-size: 0.75rem; font-weight: 600; padding: 0.2rem 0.6rem; border-radius: 100px; display: inline-flex; align-items: center; gap: 0.25rem;">
-                            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Published
-                        </span>
-                    </div>
-                    <div class="official-response-box" style="background: #FDF2F7; border: 1px solid rgba(230, 63, 127, 0.15); border-left: 4px solid var(--accent-pink); border-radius: 12px; padding: 1.5rem; font-size: 0.98rem; line-height: 1.6; color: var(--text-main); position: relative; animation: slideDown 0.3s ease;">
-                        <div style="display: flex; gap: 1rem; align-items: flex-start;">
-                            <img src="${ministerAvatar}" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;" alt="Minister">
-                            <div style="flex: 1;">
-                                <div style="font-weight: 700; font-size: 0.95rem; margin-bottom: 0.25rem; color: var(--text-main);">${ministerName}</div>
-                                <div style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.75rem;">${ministerRole}</div>
-                                <p class="official-response-text" style="margin: 0; white-space: pre-wrap; font-size: 0.95rem; color: var(--text-main); line-height: 1.6;">${messageText}</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            `;
-        }
-
-        // Set button outline style and text
-        if (composeOpenBtn) {
-            composeOpenBtn.classList.add('has-published');
-            var textSpan = composeOpenBtn.querySelector('span') || composeOpenBtn;
-            textSpan.textContent = 'Edit response';
-        }
-    }
-
-    // Load initial state from LocalStorage
-    var savedResponse = localStorage.getItem('official_response_' + themeId);
-    if (savedResponse) {
-        updateOfficialResponse(savedResponse);
-        if (textarea) {
-            textarea.value = savedResponse;
-        }
-    }
-
     if (composeSaveBtn) {
         composeSaveBtn.addEventListener('click', function() {
             alert('Draft saved successfully!');
@@ -373,9 +310,6 @@ Compose reply to constituents
     
     if (composePublishBtn) {
         composePublishBtn.addEventListener('click', function() {
-            var responseText = textarea ? textarea.value : '';
-            localStorage.setItem('official_response_' + themeId, responseText);
-            updateOfficialResponse(responseText);
             alert('Your response has been published successfully and sent to constituents!');
             closeComposeModal();
         });
