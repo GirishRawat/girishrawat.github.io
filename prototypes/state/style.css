@@ -1137,6 +1137,28 @@ body.modal-open {
    Motion Details Page Styles
    ========================================= */
 
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .motion-page-layout {
     display: flex;
     width: 100vw;
@@ -1153,6 +1175,7 @@ body.modal-open {
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    animation: slideInLeft 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 .motion-top-nav {
@@ -1234,6 +1257,8 @@ body.modal-open {
     box-shadow: 0 8px 30px rgba(0,0,0,0.04);
     border: 1px solid var(--border-subtle);
     height: fit-content;
+    animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+    animation-delay: 0.05s;
 }
 
 /* Segmented Control */
