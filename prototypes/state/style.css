@@ -1395,6 +1395,7 @@ body.modal-open {
     letter-spacing: 0.05em;
     color: var(--text-muted);
     font-weight: 700;
+    margin-top: 3em;
     margin-bottom: -1rem;
 }
 
