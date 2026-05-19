@@ -1435,3 +1435,132 @@ body.modal-open {
         overflow-y: visible;
     }
 }
+
+/* =========================================
+   Local Press Section Styles
+   ========================================= */
+
+.local-press-section {
+    background: var(--surface-bright);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.local-press-section h3 {
+    margin: 0 0 0.25rem 0;
+    font-size: 1.15rem;
+    color: var(--text-main);
+}
+
+.local-press-section > p {
+    margin: 0 0 1.5rem 0;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+}
+
+.press-outlet-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.press-outlet-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    background: var(--surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+}
+
+.outlet-info-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.outlet-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+}
+
+.outlet-details h4 {
+    margin: 0 0 0.15rem 0;
+    font-size: 1rem;
+    color: var(--text-main);
+}
+
+.outlet-details p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.outlet-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.outlet-tag {
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.outlet-tag.tag-print {
+    background: #E6F4EA;
+    color: #1E8E3E;
+}
+
+.outlet-tag.tag-online {
+    background: #E8F0FE;
+    color: #1967D2;
+}
+
+.outlet-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: var(--surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    color: var(--text-main);
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.outlet-btn:hover {
+    background: var(--surface-container-low);
+}
+
+.disclaimer-banner {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    background: #FDF3E1;
+    color: #8C6A36;
+    padding: 1rem;
+    border-radius: var(--radius-md);
+    font-size: 0.85rem;
+    line-height: 1.4;
+    margin-bottom: 2rem;
+}
+
+.disclaimer-banner svg {
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+}
