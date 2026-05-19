@@ -399,8 +399,14 @@ Compose official response
             }
             localStorage.setItem('official_response_' + themeId, text);
             updateOfficialResponse(text);
-            alert('Your response has been published successfully and sent to constituents!');
             closeComposeModal();
+            
+            // Smoothly scroll down to the newly updated official response section
+            setTimeout(function() {
+                if (officialResponseSection) {
+                    officialResponseSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            }, 300);
         });
     }
 
