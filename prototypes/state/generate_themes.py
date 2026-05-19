@@ -547,9 +547,6 @@ def build_ai_summary_block(theme):
 </button>
 <h2 class="ai-summary-modal-title" id="ai-summary-modal-title">AI Summary</h2>
 <p class="ai-summary-modal-subtitle">Full analysis for {theme["title"]}</p>
-<div class="ai-summary-modal-body">
-{long_html}
-</div>
 
 <div class="ai-sentiment-section">
     <h4>Sentiment Breakdown</h4>
@@ -574,6 +571,10 @@ def build_ai_summary_block(theme):
         </div>
         <span class="sentiment-value">14%</span>
     </div>
+</div>
+
+<div class="ai-summary-modal-body">
+{long_html}
 </div>
 
 <div class="ai-summary-modal-sources">
