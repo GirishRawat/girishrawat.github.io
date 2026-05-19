@@ -52,6 +52,26 @@
                     <p>This motion, titled 'Recognise Palestinian statehood at the United Nations', has gathered significant attention with 16000 votes and 2100 comments. Supporters argue that this is a critical step forward for the community and urge the government to take immediate action. The proposal aims to address key concerns raised by citizens across the nation.</p>
                 </div>
 
+                <!-- Official Response Section -->
+                <div id="official-response-section" class="official-response-section" style="display: none; margin-bottom: 2rem;">
+                    <h3 class="motions-section-title" style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); margin-bottom: 0.75rem;">Official Response from Government</h3>
+                    <div class="official-response-card">
+                        <div class="official-response-header">
+                            <div class="minister-info-mini">
+                                <img src="https://randomuser.me/api/portraits/men/88.jpg" alt="David Lammy" class="minister-avatar-mini"/>
+                                <div class="minister-details-mini">
+                                    <h4>David Lammy</h4>
+                                    <p>Foreign Secretary</p>
+                                </div>
+                            </div>
+                            <div class="response-status">
+                                <span class="status-badge">Published</span>
+                            </div>
+                        </div>
+                        <p class="official-response-text" id="official-response-text"></p>
+                    </div>
+                </div>
+
 
 
                 <div class="minister-profile-card">
@@ -152,11 +172,11 @@
 
                 <h4 class="similar-motions-header">SIMILAR MOTIONS</h4>
                 
-        <a class="similar-motion-card" href="motion-restore-the-international-aid-budget-to-0-7-of-gni.html" style="text-decoration: none; display: block; margin-bottom: 1rem;">
-            <h4>Restore the international aid budget to 0.7% of GNI</h4>
+        <a class="similar-motion-card" href="motion-sanction-officials-linked-to-election-interference-abroad.html" style="text-decoration: none; display: block; margin-bottom: 1rem;">
+            <h4>Sanction officials linked to election interference abroad</h4>
             <div class="motion-metadata" style="color: var(--text-muted); font-size: 0.9rem; display: flex; gap: 1rem;">
-                <span class="meta-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg> 890</span>
-                <span class="meta-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg> 6200</span>
+                <span class="meta-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg> 189</span>
+                <span class="meta-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg> 1400</span>
                 <span class="meta-scope">National</span>
             </div>
         </a>
@@ -166,5 +186,18 @@
             </div>
         </div>
     </div>
+
+    <script>
+    (function() {
+        var themeId = "international";
+        var savedResponse = localStorage.getItem('official_response_' + themeId);
+        if (savedResponse && savedResponse.trim() !== '') {
+            var textElem = document.getElementById('official-response-text');
+            var sectionElem = document.getElementById('official-response-section');
+            if (textElem) textElem.textContent = savedResponse;
+            if (sectionElem) sectionElem.style.display = 'block';
+        }
+    })();
+    </script>
 </body>
 </html>

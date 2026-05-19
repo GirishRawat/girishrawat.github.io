@@ -52,6 +52,26 @@
                     <p>This motion, titled 'Provide emergency grants for independent retailers', has gathered significant attention with 210 votes and 34 comments. Supporters argue that this is a critical step forward for the community and urge the government to take immediate action. The proposal aims to address key concerns raised by citizens across the nation.</p>
                 </div>
 
+                <!-- Official Response Section -->
+                <div id="official-response-section" class="official-response-section" style="display: none; margin-bottom: 2rem;">
+                    <h3 class="motions-section-title" style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); margin-bottom: 0.75rem;">Official Response from Government</h3>
+                    <div class="official-response-card">
+                        <div class="official-response-header">
+                            <div class="minister-info-mini">
+                                <img src="https://randomuser.me/api/portraits/men/44.jpg" alt="Jonathan Reynolds" class="minister-avatar-mini"/>
+                                <div class="minister-details-mini">
+                                    <h4>Jonathan Reynolds</h4>
+                                    <p>Business Secretary</p>
+                                </div>
+                            </div>
+                            <div class="response-status">
+                                <span class="status-badge">Published</span>
+                            </div>
+                        </div>
+                        <p class="official-response-text" id="official-response-text"></p>
+                    </div>
+                </div>
+
 
 
                 <div class="minister-profile-card">
@@ -166,5 +186,18 @@
             </div>
         </div>
     </div>
+
+    <script>
+    (function() {
+        var themeId = "business-rates";
+        var savedResponse = localStorage.getItem('official_response_' + themeId);
+        if (savedResponse && savedResponse.trim() !== '') {
+            var textElem = document.getElementById('official-response-text');
+            var sectionElem = document.getElementById('official-response-section');
+            if (textElem) textElem.textContent = savedResponse;
+            if (sectionElem) sectionElem.style.display = 'block';
+        }
+    })();
+    </script>
 </body>
 </html>
