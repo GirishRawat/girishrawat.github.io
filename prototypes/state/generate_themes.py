@@ -707,10 +707,10 @@ for theme, m in all_motions:
     '''
     content = content.replace("{{BULLET_POINTS}}", bullets)
     
-    # Similar motions (pick 2 random from same theme)
+    # Similar motions (pick 1 random from same theme)
     similar = [sm for sm in get_motion_pool(theme) if sm["title"] != m["title"]]
     random.shuffle(similar)
-    similar = similar[:2]
+    similar = similar[:1]
     
     similar_html = []
     for sm in similar:
