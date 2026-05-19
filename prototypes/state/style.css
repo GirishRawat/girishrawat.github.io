@@ -1046,16 +1046,10 @@ hr {
     transition: width 1s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.sentiment-bar.frustrated {
-    background: #E05D52;
-}
-
-.sentiment-bar.concerned {
-    background: #FBBC05;
-}
-
+.sentiment-bar.frustrated,
+.sentiment-bar.concerned,
 .sentiment-bar.hopeful {
-    background: #0F9D58;
+    background: var(--accent-pink);
 }
 
 .sentiment-value {
