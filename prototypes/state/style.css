@@ -1738,3 +1738,264 @@ body.modal-open {
     flex-shrink: 0;
     margin-top: 0.1rem;
 }
+
+/* =========================================
+   Compose Modal Styles
+   ========================================= */
+.compose-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.compose-modal.is-open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.compose-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 17, 20, 0.5);
+    backdrop-filter: blur(12px);
+    transition: opacity 0.3s ease;
+}
+
+.compose-modal-dialog {
+    position: relative;
+    width: 100%;
+    max-width: 680px;
+    max-height: min(90vh, 820px);
+    overflow-y: auto;
+    background: var(--surface-bright);
+    border: 1px solid var(--border-subtle);
+    border-radius: 24px;
+    padding: 2.5rem;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.18);
+    transform: translateY(30px) scale(0.96);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    opacity: 0;
+    z-index: 1101;
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+}
+
+.compose-modal.is-open .compose-modal-dialog {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+}
+
+.compose-modal-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    background: var(--surface-container-low);
+    border: 1px solid var(--border-subtle);
+    border-radius: 50%;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.compose-modal-close:hover {
+    background: var(--text-main);
+    color: white;
+    transform: rotate(90deg);
+}
+
+/* Header */
+.compose-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid var(--border-subtle);
+    padding-bottom: 1.25rem;
+    gap: 1rem;
+}
+
+.compose-modal-title {
+    font-family: var(--font-headline);
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--text-main);
+    letter-spacing: -0.02em;
+    margin-bottom: 0.35rem;
+}
+
+.compose-modal-stats {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.compose-modal-badges {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.badge {
+    padding: 0.35rem 0.75rem;
+    border-radius: 100px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+}
+
+.badge-momentum {
+    background: #FDF2F7;
+    color: var(--accent-pink);
+    border: 1px solid rgba(230, 63, 127, 0.15);
+}
+
+.badge-status {
+    background: #FEF3C7;
+    color: #D97706;
+    border: 1px solid rgba(217, 119, 6, 0.15);
+}
+
+/* Sections */
+.compose-modal-section h3 {
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    margin-bottom: 0.85rem;
+}
+
+.compose-summary-box {
+    background: var(--surface-container-low);
+    border: 1px solid var(--border-subtle);
+    border-radius: 12px;
+    padding: 1.25rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-main);
+    margin-bottom: 0.85rem;
+    border-left: 3px solid var(--accent-pink);
+}
+
+.compose-summary-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.compose-summary-tags .tag {
+    cursor: default;
+    border-radius: 100px;
+    padding: 0.35rem 0.85rem;
+    font-weight: 600;
+    font-size: 0.8rem;
+    background: var(--surface-container-low);
+    border: 1px solid var(--border-subtle);
+    color: var(--text-muted);
+}
+
+/* Input Area */
+.compose-input-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.compose-textarea {
+    width: 100%;
+    height: 120px;
+    padding: 1.25rem;
+    border-radius: 14px;
+    border: 1px solid var(--border-subtle);
+    background: var(--surface-bright);
+    font-family: var(--font-body);
+    font-size: 0.98rem;
+    line-height: 1.6;
+    color: var(--text-main);
+    resize: none;
+    transition: all 0.2s ease;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.compose-textarea:focus {
+    outline: none;
+    border-color: var(--accent-pink);
+    box-shadow: 0 0 0 3px rgba(230, 63, 127, 0.15);
+}
+
+/* Footer Action Bar */
+.compose-modal-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--border-subtle);
+    padding-top: 1.5rem;
+    margin-top: 0.5rem;
+    gap: 1rem;
+}
+
+.compose-reaches-info {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.compose-footer-buttons {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.compose-footer-buttons button {
+    padding: 0.65rem 1.25rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.compose-footer-buttons .btn-secondary {
+    background: var(--surface-bright);
+    color: var(--text-main);
+    border: 1px solid var(--border-subtle);
+}
+
+.compose-footer-buttons .btn-secondary:hover {
+    background: var(--surface-container-low);
+    border-color: var(--text-muted);
+}
+
+.compose-footer-buttons .btn-primary {
+    background: var(--accent-pink);
+    color: white;
+    border: none;
+    box-shadow: 0 4px 12px rgba(230, 63, 127, 0.15);
+}
+
+.compose-footer-buttons .btn-primary:hover {
+    background: #d6326e;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(230, 63, 127, 0.25);
+}
+
+.compose-footer-buttons .btn-primary:active {
+    transform: translateY(0);
+}

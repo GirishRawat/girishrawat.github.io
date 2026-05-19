@@ -506,6 +506,142 @@ AI_SUMMARIES = {
     },
 }
 
+COMPOSE_DATA = {
+    "healthcare-wait-times": {
+        "title": "NHS GP wait times",
+        "draft": "I hear your frustration — long waits to see a GP are unacceptable, and I want you to know I'm taking this seriously. I've written to our local NHS trust requesting an urgent meeting, and I'll be raising this issue in Parliament next week. I'll keep you updated on what I hear back."
+    },
+    "business-rates": {
+        "title": "High street business rates",
+        "draft": "Thank you for sharing your concerns regarding high street business rates. I agree that our local high street shops are vital community hubs. I am lobbying the Chancellor to freeze rates for independent retailers and will advocate for targeted relief in our ward during the next council budget debate."
+    },
+    "transport": {
+        "title": "Bus route cancellations and delays",
+        "draft": "I understand how disruptive public transit delays are. I have met with TfL operators to strongly oppose any cuts to our local routes. I am demanding the immediate installation of real-time countdown boards at central bus stops and will push for operational penalties for missed service slots."
+    },
+    "arts": {
+        "title": "Online safety and animal welfare",
+        "draft": "Thank you for reaching out about online safety and cultural protection. I support age-appropriate online safety regulations that protect young people from cyberbullying and harmful content, while actively opposing total bans that isolate them. I will also continue supporting animal welfare initiatives in Parliament."
+    },
+    "benefits": {
+        "title": "Cost of living and welfare support",
+        "draft": "I hear your struggle clearly — the cost-of-living crisis is a national emergency. I have voted to abolish the two-child benefit cap and am actively calling for the minimum wage to match the real living wage. I will continue to press the government for a fairer, more compassionate welfare system."
+    },
+    "business": {
+        "title": "Small business trade and supply chains",
+        "draft": "I completely agree that trade policy must align with our human rights values. I am sponsoring a motion to ban all imports produced through forced labour. I am also calling for simplified customs processes to help our independent local exporters trade more easily."
+    },
+    "courts": {
+        "title": "Court backlogs and violence sentencing",
+        "draft": "Accelerating justice is one of my highest priorities. I have challenged the Ministry of Justice to clear local court backlogs by funding emergency court sittings. I support stricter guidelines for repeat violent offenders alongside robust funding for ward-level rehabilitation programs."
+    },
+    "education": {
+        "title": "SEND funding and free school meals",
+        "draft": "Every child deserves an equal start. I am lobbying to make free school meals universal for all primary school pupils. I have also raised the crisis in SEND funding in Parliament, demanding shorter EHCP assessment times and dedicated funding for local schools."
+    },
+    "energy": {
+        "title": "Green transition and energy bills",
+        "draft": "Addressing energy poverty while pursuing our green transition is essential. I am co-signing a proposal for a social tariff to cap energy bills for low-income homes. I also support stopping new oil licenses in favour of scaling up clean, community-owned wind and solar projects."
+    },
+    "environment": {
+        "title": "Water quality and river sewage bans",
+        "draft": "Dumping sewage in our waterways is an absolute disgrace. I have voted for a bill to impose criminal liability on water company executives who permit environmental dumping. I will continue to push for robust regulations to protect our natural habitats and local farms."
+    },
+    "government": {
+        "title": "Public service funding and tax reform",
+        "draft": "Our public services have been underfunded for too long. I am advocating for a progressive tax reform, including a wealth tax on the top 1%, to fund local councils, education, and healthcare. I will oppose any tax rises that disproportionately hit working families."
+    },
+    "housing": {
+        "title": "Rent controls and social housing",
+        "draft": "The housing crisis in our constituency is severe. I support giving councils the power to implement rent controls to protect private tenants. I am also lobbying the Housing Minister for direct government investment to build more high-quality, energy-efficient social homes."
+    },
+    "immigration": {
+        "title": "Neighborhood policing and safety",
+        "draft": "Feeling safe in our community is a fundamental right. I am calling for a dedicated uplift in neighborhood policing, demanding more officers on foot patrols in our ward. I am also working with local groups to ensure policing is transparent and community-led."
+    },
+    "healthcare": {
+        "title": "NHS dentistry and mental health access",
+        "draft": "Access to dental and mental healthcare is currently broken. I have initiated a debate on GP and NHS dentistry deserts, demanding funding to recruit dentists to our ward. I will also continue to lobby for ring-fenced mental health funding to cut waiting lists."
+    },
+    "international": {
+        "title": "Ceasefire in Gaza and Ukraine aid",
+        "draft": "Thank you for reaching out about these crucial international crises. I continue to call for an immediate ceasefire in Gaza, the release of hostages, and unfettered humanitarian aid. I also support maintaining aid to Ukraine and restoring our national aid budget to 0.7% of GNI."
+    }
+}
+
+def build_compose_modal_html(theme):
+    data = COMPOSE_DATA.get(theme["id"], {
+        "title": f"{theme['title']}",
+        "draft": f"Thank you for sharing your thoughts on {theme['title'].lower()}. I appreciate your feedback and am actively studying these issues to better represent you in Parliament."
+    })
+    
+    try:
+        raw_val = int(theme["total_talking"].replace(",", ""))
+    except:
+        raw_val = 92
+        
+    constituents_count = f"{raw_val * 31:,}"
+    tags_html = '\\n'.join([f'                <span class="tag tag-outline-pink">{tag}</span>' for tag in theme['tags']])
+    summaries = AI_SUMMARIES[theme["id"]]
+    summary_text = summaries["short"]
+    
+    return f'''
+<div id="compose-modal" class="compose-modal" aria-hidden="true" role="dialog" aria-labelledby="compose-modal-title">
+    <div class="compose-modal-backdrop"></div>
+    <div class="compose-modal-dialog">
+        <button type="button" class="compose-modal-close" id="compose-modal-close" aria-label="Close">
+            <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20"><line x1="18" x2="6" y1="6" y2="18"></line><line x1="6" x2="18" y1="6" y2="18"></line></svg>
+        </button>
+        
+        <!-- Header -->
+        <div class="compose-modal-header">
+            <div>
+                <h2 class="compose-modal-title" id="compose-modal-title">{data["title"]}</h2>
+                <p class="compose-modal-stats">
+                    <svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="14" style="margin-right: 0.25rem; opacity: 0.7;"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                    {constituents_count} constituents · rising fast
+                </p>
+            </div>
+            <div class="compose-modal-badges">
+                <span class="badge badge-momentum">
+                    <svg fill="none" height="12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" width="12" style="margin-right: 0.2rem;"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+                    High momentum
+                </span>
+                <span class="badge badge-status">Awaiting response</span>
+            </div>
+        </div>
+
+        <!-- AI Summary of what citizens are saying -->
+        <div class="compose-modal-section">
+            <h3>AI Summary of what citizens are saying</h3>
+            <div class="compose-summary-box">
+                <p>{summary_text}</p>
+            </div>
+            <div class="compose-summary-tags">
+{tags_html}
+            </div>
+        </div>
+
+        <!-- Compose response to constituents -->
+        <div class="compose-modal-section compose-input-section">
+            <h3>Compose response to constituents</h3>
+            <textarea class="compose-textarea" placeholder="Write your response to constituents here...">{data["draft"]}</textarea>
+        </div>
+
+        <!-- Footer actions -->
+        <div class="compose-modal-footer">
+            <span class="compose-reaches-info">
+                Reaches {constituents_count} constituents · public on State
+            </span>
+            <div class="compose-footer-buttons">
+                <button type="button" class="btn-secondary" id="compose-save-draft">Save draft</button>
+                <button type="button" class="btn-primary compose-publish-btn" id="compose-publish">Publish response</button>
+            </div>
+        </div>
+    </div>
+</div>
+'''
+
 DISCLAIMER_SVG = '<svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="14"><circle cx="12" cy="12" r="10"></circle><line x1="12" x2="12" y1="8" y2="12"></line><line x1="12" x2="12.01" y1="16" y2="16"></line></svg>'
 LOGO_SVG = '<svg height="18" viewBox="0 0 120 120" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M 35 35 H 75 V 50 H 90 V 65 H 105 V 105 H 65 V 90 H 50 V 75 H 35 Z" fill="#E63F7F"></path></svg>'
 
@@ -633,6 +769,9 @@ for theme in themes_data:
     
     # AI summary + modal
     content = content.replace("<!-- AI_SUMMARY_BLOCK -->", build_ai_summary_block(theme_page))
+    
+    # Compose modal
+    content = content.replace("<!-- COMPOSE_MODAL_BLOCK -->", build_compose_modal_html(theme_page))
 
     # Bar chart
     content = re.sub(r'<div class="mini-bar-chart">.*?</div>\n                </div>', f'<div class="mini-bar-chart">\n{generate_bar_chart()}\n</div>\n                </div>', content, flags=re.DOTALL)

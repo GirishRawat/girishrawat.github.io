@@ -243,30 +243,83 @@ Compose reply to constituents
 </svg>
 </button>
 </a>
+<!-- COMPOSE_MODAL_BLOCK -->
+
 <script>
 (function () {
-    var modal = document.getElementById('ai-summary-modal');
-    var openBtn = document.getElementById('ai-summary-read-more');
-    var closeBtn = document.getElementById('ai-summary-modal-close');
-    var backdrop = document.querySelector('.ai-summary-modal-backdrop');
+    // AI Summary Modal
+    var aiModal = document.getElementById('ai-summary-modal');
+    var aiOpenBtn = document.getElementById('ai-summary-read-more');
+    var aiCloseBtn = document.getElementById('ai-summary-modal-close');
+    var aiBackdrop = document.querySelector('.ai-summary-modal-backdrop');
 
-    function openModal() {
-        modal.classList.add('is-open');
-        modal.setAttribute('aria-hidden', 'false');
-        document.body.classList.add('modal-open');
+    function openAiModal() {
+        if (aiModal) {
+            aiModal.classList.add('is-open');
+            aiModal.setAttribute('aria-hidden', 'false');
+            document.body.classList.add('modal-open');
+        }
     }
 
-    function closeModal() {
-        modal.classList.remove('is-open');
-        modal.setAttribute('aria-hidden', 'true');
-        document.body.classList.remove('modal-open');
+    function closeAiModal() {
+        if (aiModal) {
+            aiModal.classList.remove('is-open');
+            aiModal.setAttribute('aria-hidden', 'true');
+            document.body.classList.remove('modal-open');
+        }
     }
 
-    if (openBtn) openBtn.addEventListener('click', openModal);
-    if (closeBtn) closeBtn.addEventListener('click', closeModal);
-    if (backdrop) backdrop.addEventListener('click', closeModal);
+    if (aiOpenBtn) aiOpenBtn.addEventListener('click', openAiModal);
+    if (aiCloseBtn) aiCloseBtn.addEventListener('click', closeAiModal);
+    if (aiBackdrop) aiBackdrop.addEventListener('click', closeAiModal);
+
+    // Compose Modal
+    var composeModal = document.getElementById('compose-modal');
+    var composeOpenBtn = document.querySelector('.compose-reply-btn');
+    var composeCloseBtn = document.getElementById('compose-modal-close');
+    var composeBackdrop = document.querySelector('.compose-modal-backdrop');
+    var composeSaveBtn = document.getElementById('compose-save-draft');
+    var composePublishBtn = document.getElementById('compose-publish');
+
+    function openComposeModal() {
+        if (composeModal) {
+            composeModal.classList.add('is-open');
+            composeModal.setAttribute('aria-hidden', 'false');
+            document.body.classList.add('modal-open');
+        }
+    }
+
+    function closeComposeModal() {
+        if (composeModal) {
+            composeModal.classList.remove('is-open');
+            composeModal.setAttribute('aria-hidden', 'true');
+            document.body.classList.remove('modal-open');
+        }
+    }
+
+    if (composeOpenBtn) composeOpenBtn.addEventListener('click', openComposeModal);
+    if (composeCloseBtn) composeCloseBtn.addEventListener('click', closeComposeModal);
+    if (composeBackdrop) composeBackdrop.addEventListener('click', closeComposeModal);
+    
+    if (composeSaveBtn) {
+        composeSaveBtn.addEventListener('click', function() {
+            alert('Draft saved successfully!');
+            closeComposeModal();
+        });
+    }
+    
+    if (composePublishBtn) {
+        composePublishBtn.addEventListener('click', function() {
+            alert('Your response has been published successfully and sent to constituents!');
+            closeComposeModal();
+        });
+    }
+
     document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
+        if (e.key === 'Escape') {
+            closeAiModal();
+            closeComposeModal();
+        }
     });
 })();
 </script>
