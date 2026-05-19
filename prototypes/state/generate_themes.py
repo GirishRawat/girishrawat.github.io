@@ -762,6 +762,12 @@ for theme in themes_data:
     
     # Compose modal
     content = content.replace("<!-- COMPOSE_MODAL_BLOCK -->", build_compose_modal_html(theme_page))
+    
+    # Inject script variables
+    content = content.replace("<!-- THEME_ID -->", theme_page["id"])
+    content = content.replace("<!-- MINISTER_NAME -->", theme_page["minister_name"])
+    content = content.replace("<!-- MINISTER_ROLE -->", theme_page["minister_role"])
+    content = content.replace("<!-- MINISTER_AVATAR -->", theme_page["minister_avatar"])
 
     # Bar chart
     content = re.sub(r'<div class="mini-bar-chart">.*?</div>\n                </div>', f'<div class="mini-bar-chart">\n{generate_bar_chart()}\n</div>\n                </div>', content, flags=re.DOTALL)

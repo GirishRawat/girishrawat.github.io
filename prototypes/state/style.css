@@ -1920,7 +1920,7 @@ body.modal-open {
 
 .compose-textarea {
     width: 100%;
-    height: 120px;
+    height: 240px;
     padding: 1.25rem;
     border-radius: 14px;
     border: 1px solid var(--border-subtle);
@@ -1998,4 +1998,28 @@ body.modal-open {
 
 .compose-footer-buttons .btn-primary:active {
     transform: translateY(0);
+}
+
+/* Has published / edit response state for outline compose button */
+.compose-reply-btn.has-published {
+    background: transparent !important;
+    border: 2px solid var(--accent-pink) !important;
+    color: var(--accent-pink) !important;
+    box-shadow: none !important;
+}
+
+.compose-reply-btn.has-published:hover {
+    background: rgba(230, 63, 127, 0.05) !important;
+    box-shadow: 0 4px 12px rgba(230, 63, 127, 0.1) !important;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
