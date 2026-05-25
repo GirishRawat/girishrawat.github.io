@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newsletters | Girish Rawat</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #fcfcfc;
+            --text-color: #333333;
+            --card-bg: #ffffff;
+            --card-hover: #f3f4f6;
+            --accent: #2563eb;
+            --meta-color: #6b7280;
+            --border-color: #e5e7eb;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-color: #0f172a;
+                --text-color: #f1f5f9;
+                --card-bg: #1e293b;
+                --card-hover: #334155;
+                --accent: #60a5fa;
+                --meta-color: #94a3b8;
+                --border-color: #334155;
+            }
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        header {
+            margin-bottom: 60px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: -0.02em;
+        }
+
+        p.subtitle {
+            font-size: 1.1rem;
+            color: var(--meta-color);
+            margin: 0;
+        }
+
+        .newsletter-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .newsletter-card {
+            display: block;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 24px;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.2s ease-in-out;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        }
+
+        .newsletter-card:hover {
+            transform: translateY(-2px);
+            background-color: var(--card-hover);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            border-color: var(--accent);
+        }
+
+        .newsletter-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 0 0 8px 0;
+            color: var(--text-color);
+            line-height: 1.3;
+        }
+
+        .newsletter-meta {
+            font-size: 0.9rem;
+            color: var(--meta-color);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .read-more {
+            margin-top: 16px;
+            font-size: 0.95rem;
+            color: var(--accent);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .read-more::after {
+            content: "→";
+            transition: transform 0.2s ease;
+        }
+
+        .newsletter-card:hover .read-more::after {
+            transform: translateX(4px);
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 40px;
+            color: var(--meta-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--text-color);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <a href="../index.html" class="back-link">← Back to Home</a>
+        
+        <header>
+            <h1>Newsletters</h1>
+            <p class="subtitle">Thoughts on tech, design, and AI.</p>
+        </header>
+
+        <div class="newsletter-list">
+            
+            <!-- Post Card -->
+            <a href="post.html?id=chinese-ai-company-2026" class="newsletter-card">
+                <h2 class="newsletter-title">Which Chinese AI Company Could Win by the End of 2026?</h2>
+                <div class="newsletter-meta">
+                    <span>May 25, 2026</span>
+                    <span>•</span>
+                    <span>3 min read</span>
+                </div>
+                <div class="read-more">Read article</div>
+            </a>
+            
+            <!-- You can add more posts here in the future by copying the structure above -->
+
+        </div>
+    </div>
+
+</body>
+</html>

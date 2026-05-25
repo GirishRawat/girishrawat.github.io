@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reading Newsletter | Girish Rawat</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <style>
+        :root {
+            --bg-color: #fcfcfc;
+            --text-color: #1f2937;
+            --text-muted: #6b7280;
+            --accent: #2563eb;
+            --border-color: #e5e7eb;
+            --blockquote-bg: #f3f4f6;
+            --code-bg: #f1f5f9;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-color: #0f172a;
+                --text-color: #e2e8f0;
+                --text-muted: #94a3b8;
+                --accent: #60a5fa;
+                --border-color: #334155;
+                --blockquote-bg: #1e293b;
+                --code-bg: #0f172a;
+            }
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.7;
+            font-size: 1.125rem;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        header {
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 40px;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--text-color);
+        }
+
+        /* Article content styling */
+        article {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        article h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+            margin-top: 0;
+            margin-bottom: 24px;
+        }
+
+        article h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-top: 48px;
+            margin-bottom: 16px;
+        }
+
+        article h3 {
+            font-size: 1.35rem;
+            font-weight: 600;
+            margin-top: 32px;
+            margin-bottom: 12px;
+        }
+
+        article p {
+            margin-top: 0;
+            margin-bottom: 24px;
+        }
+
+        article a {
+            color: var(--accent);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        article a:hover {
+            border-bottom-color: var(--accent);
+        }
+
+        article ul, article ol {
+            margin-top: 0;
+            margin-bottom: 24px;
+            padding-left: 24px;
+        }
+
+        article li {
+            margin-bottom: 8px;
+        }
+
+        article blockquote {
+            margin: 32px 0;
+            padding: 16px 24px;
+            border-left: 4px solid var(--accent);
+            background-color: var(--blockquote-bg);
+            border-radius: 0 8px 8px 0;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        article blockquote p:last-child {
+            margin-bottom: 0;
+        }
+
+        article hr {
+            border: 0;
+            height: 1px;
+            background: var(--border-color);
+            margin: 48px 0;
+        }
+
+        article strong {
+            font-weight: 600;
+        }
+
+        article code {
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+            background-color: var(--code-bg);
+            padding: 0.2em 0.4em;
+            border-radius: 4px;
+            font-size: 0.85em;
+        }
+
+        /* Loading state */
+        .loading {
+            text-align: center;
+            color: var(--text-muted);
+            font-style: italic;
+            margin-top: 50px;
+        }
+
+        .error {
+            color: #ef4444;
+            text-align: center;
+            padding: 20px;
+            background: #fee2e2;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .error {
+                background: #7f1d1d;
+                color: #fca5a5;
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <a href="index.html" class="back-link">← All Newsletters</a>
+        
+        <article id="content">
+            <div class="loading">Loading newsletter...</div>
+        </article>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", async () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const postId = urlParams.get('id');
+            const contentDiv = document.getElementById('content');
+
+            if (!postId) {
+                contentDiv.innerHTML = '<div class="error">No newsletter specified. Please go back and select a post.</div>';
+                return;
+            }
+
+            try {
+                // Fetch the markdown file
+                const response = await fetch(`${postId}.md`);
+                
+                if (!response.ok) {
+                    throw new Error(`Could not find the newsletter (${response.status})`);
+                }
+                
+                const markdown = await response.text();
+                
+                // Parse markdown to HTML
+                const html = marked.parse(markdown);
+                
+                // Render
+                contentDiv.innerHTML = html;
+                
+                // Set the page title to the first heading if found
+                const match = markdown.match(/^#\s+(.+)/m);
+                if (match && match[1]) {
+                    document.title = `${match[1]} | Girish Rawat`;
+                }
+
+            } catch (error) {
+                console.error("Error loading markdown:", error);
+                contentDiv.innerHTML = `<div class="error">Failed to load newsletter: ${error.message}</div>`;
+            }
+        });
+    </script>
+</body>
+</html>
